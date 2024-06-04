@@ -1,0 +1,85 @@
+:root {
+  --pink: #ff3a85;
+  --item: #282828;
+  --putih: #fff;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background: url(../static/img/bg-home.svg);
+  color: var(--putih);
+}
+
+/* navbar */
+.navbar {
+  background-image: url(../static/img/bg-navbar.svg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 80px;
+  padding: 1.4rem 7%;
+}
+
+.book-button {
+  background-color: var(--item);
+  color: var(--putih);
+  font-size: 14px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  padding: 8px 20px;
+  border-radius: 50px;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.book-button:hover {
+  background-color: var(--pink);
+}
+
+.navbar-toggler {
+  border: none;
+  font-size: 1.25rem;
+}
+
+.navbar-toggler:hover {
+  background-color: var(--item);
+  transition: 0.5s;
+  border-radius: 20%;
+}
+
+.navbar-toggler:focus,
+.btn-close:focus {
+  box-shadow: none;
+  outline: none;
+}
+
+.nav-link {
+  color: var(--putih);
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+}
+
+.nav-link:hover {
+  color: var(--pink);
+}
+
+/* home */
+
+.section-home .container .row{
+  margin-top: 5rem;
+}
+
+.moto{
+  margin-right: 5rem;
+}
+
+.btn-pesan{
+  background-color: #CC004E;
+  color: var(--putih);
+  border-radius: 0.5rem;
+  padding: 8px 20px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-size: 32px;
+  text-decoration: none;
+  margin-right: 10rem;
+}
