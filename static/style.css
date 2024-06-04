@@ -83,3 +83,12 @@ body {
   text-decoration: none;
   margin-right: 10rem;
 }
+
+.btn-pesan:hover{
+  background-color: var(--putih);
+  color: var(--pink);
+}
+
+.section-home .container .row .icon-person{
+  margin-top: 3.4rem;
+}
