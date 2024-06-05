@@ -26,8 +26,8 @@ body {
   font-family: "Poppins", sans-serif;
   font-weight: 600;
   padding: 8px 20px;
+  border: 0;
   border-radius: 50px;
-  text-decoration: none;
   transition: 0.3s;
 }
 
@@ -62,26 +62,27 @@ body {
   color: var(--pink);
 }
 
-/* home */
-
-.section-home .container .row{
-  margin-top: 5rem;
+/* home section */
+#home{
+  height: 100vh;
+  width: 100%;
 }
 
-.moto{
-  margin-right: 5rem;
+.home-tagline p{
+ margin-bottom: 30px;
+
 }
 
 .btn-pesan{
   background-color: #CC004E;
   color: var(--putih);
+  border: 0;
   border-radius: 0.5rem;
   padding: 8px 20px;
   font-family: "Poppins", sans-serif;
   font-weight: 600;
-  font-size: 32px;
+  font-size: 26px;
   text-decoration: none;
-  margin-right: 10rem;
 }
 
 .btn-pesan:hover{
@@ -89,6 +90,27 @@ body {
   color: var(--pink);
 }
 
-.section-home .container .row .icon-person{
-  margin-top: 3.4rem;
+.img-home{
+  height: 80%;
+}
+
+
+/* serevices section */
+
+.circle-services{
+  border-radius: 50%;
+  padding-top: 100%; 
+  position: relative;
+  background-color: var(--pink);
+}
+
+.rounded-col-content {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

@@ -3,7 +3,6 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Rapz Hair Studio</title>
 
     <!-- bootstrapt -->
     <link
@@ -20,6 +19,9 @@
     <!-- style css -->
     <link rel="stylesheet" href="../static/style.css" />
 
+    <!-- responsive css -->
+    <link rel="stylesheet" href="../static/responsive.css">
+
     <!-- fonts awesome -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -27,6 +29,10 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Lexend:wght@100..900&family=Manrope:wght@200..800&family=Noto+Serif+Display:ital,wght@0,100..900;1,100..900&family=Nunito:wght@300&family=Open+Sans:wght@500&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Sora:wght@100..800&display=swap"
       rel="stylesheet"
     />
+    <!-- logo title bar -->
+    <link rel="icon" href="../static/img/logo.svg" type="image/x-icon">
+
+    <title>Rapz Hair Studio</title>
   </head>
   <body>
     <!-- navbar start -->
@@ -54,7 +60,7 @@
             ></button>
           </div>
           <div class="offcanvas-body">
-            <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+            <ul class="navbar-nav justify-content-center flex-grow-1 pe-3">
               <li class="nav-item">
                 <a class="nav-link mx-lg-2" aria-current="page" href="#"
                   >Home</a
@@ -75,7 +81,9 @@
             </ul>
           </div>
         </div>
-        <a href="#" class="book-button">Booking Now</a>
+        <a href="#" >
+          <button class="book-button">Booking Now</button>
+        </a>
         <button
           class="navbar-toggler"
           type="button"
@@ -91,20 +99,23 @@
     <!-- navbar end -->
 
     <!-- section home start -->
-    <section class="section-home">
-      <div class="container">
-        <div class="row">
-          <div class="col">
-            <img src="../static/img/text-rapz-hair-studio.svg" alt="text" />
-            <br /><br />
-            <img src="../static/img/moto.svg" alt="text" class="moto" />
-            <br /><br /><br />
-            <a href="#" class="btn-pesan">PESAN SEKARANG</a>
-          </div>
-          <div class="col align-self-end">
-            <img src="../static/img/icon_person.svg" class="icon-person" width="550" alt="" />
+    <section id="home">
+      <div class="container h-100">
+        <div class="row h-100">
+          <div class="col md-6 home-tagline my-auto">
+            <img src="../static/img/text-rapz-hair-studio.svg" class="image-text-home" alt="text">
+            <p>
+              <img src="../static/img/moto.svg" class="image-text-home" alt="text">
+            </p>
+
+            <a href="#">
+              <button class="btn-pesan">PESAN SEKARANG</button>
+            </a>
           </div>
         </div>
+
+        <img src="../static/img/icon_person.svg" class="position-absolute end-0 bottom-0 img-home" alt="icon-person" >
+
       </div>
     </section>
     <!-- section home end -->
@@ -112,6 +123,33 @@
     <!-- section about start -->
 
     <!-- section about end -->
+
+    <!-- section philosophy start -->
+
+    <!-- section philosophy end -->
+
+    <!-- section service start -->
+    <section id="service">
+      <div class="container">
+        <div class="row">
+          <div class="col-12 text-center">
+            <h2>SERVICES WE PROVIDES</h2>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-3">
+            <div class="circle-services">
+              <div class="rounded-col-content">
+                <svg xmlns="http://www.w3.org/2000/svg" width="150" height="150" fill="currentColor" class="bi bi-scissors" viewBox="0 0 16 16">
+                  <path d="M3.5 3.5c-.614-.884-.074-1.962.858-2.5L8 7.226 11.642 1c.932.538 1.472 1.616.858 2.5L8.81 8.61l1.556 2.661a2.5 2.5 0 1 1-.794.637L8 9.73l-1.572 2.177a2.5 2.5 0 1 1-.794-.637L7.19 8.61zm2.5 10a1.5 1.5 0 1 0-3 0 1.5 1.5 0 0 0 3 0m7 0a1.5 1.5 0 1 0-3 0 1.5 1.5 0 0 0 3 0"/>
+                </svg>
+            </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- section service end -->
 
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
