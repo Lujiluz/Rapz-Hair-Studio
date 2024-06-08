@@ -31,6 +31,13 @@ def admin_login():
 @app.route('/api/v1/get_user')
 def get_user():
   """endpoint untuk mendapatkan data seluruh user
+  menerima argument role: /api/v1/get_user?role=<role>
+  
+  returns:
+  (tanpa argument)
+    object: result dan data seluruh users
+  (dengan argument)
+    object: result message dan data users berdasarkan role
   """
   
   role = request.args.get('role')
