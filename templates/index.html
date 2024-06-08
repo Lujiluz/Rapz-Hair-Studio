@@ -13,7 +13,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
 
   <!-- style css -->
-  <link rel="stylesheet" href="../static/style.css" />
+  <link rel="stylesheet" href="../static/index.css" />
 
   <!-- fonts awesome -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -31,7 +31,7 @@
   <!-- navbar start -->
   <nav class="navbar navbar-dark bg-dark navbar-expand-lg">
     <div class="container-fluid">
-      <a class="navbar-brand" href="#">
+      <a class="navbar-brand" href="#section-home">
         <img src="../static/img/logo.svg" width="80" alt="" />
       </a>
 
@@ -64,7 +64,7 @@
           </ul>
         </div>
       </div>
-      <a href="#">
+      <a href="#" class="d-none d-lg-block">
         <button class="book-button">Booking Now</button>
       </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar"
@@ -79,19 +79,20 @@
   <section class="section-home" id="section-home">
     <div class="container text-center">
       <div class="row">
-        <div class="col align-self-start">
-          <img src="../static/img/text-rapz-hair-studio.svg" width="500" height="300" alt="text">
+        <div class="col align-self-start isian">
+          <img src="../static/img/text-rapz-hair-studio.svg" class="responsive-img" alt="text">
           <br><br>
-          <img src="../static/img/moto.svg" alt="text" class="moto">
+          <img src="../static/img/moto.svg" alt="text" class="moto responsive-img">
           <br><br><br>
           <a href="#" class="btn-pesan">PESAN SEKARANG</a>
         </div>
-        <div class="col align-self-end ">
-          <img src="../static/img/icon_person.svg" width="600" alt="" class="icon-person">
+        <div class="col align-self-end">
+          <img src="../static/img/icon_person.svg" class="icon-person responsive-img" alt="">
         </div>
       </div>
     </div>
   </section>
+
   <!-- section home end -->
 
   <!-- section about start -->
@@ -100,7 +101,7 @@
       <div class="row align-items-center justify-content-center g-5">
         <div class="col-lg-6">
           <img src="../static/img/cth-barber.svg" class="d-block mx-lg-auto img-fluid" alt="Rapz!" width="600"
-            height="400" loading="lazy">
+            height="400">
         </div>
         <div class="col-lg-6">
           <h1 class="text-about">WE ARE RAPZ!</h1>
@@ -119,7 +120,7 @@
     <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
       <div class="col-10 col-sm-8 col-lg-6">
         <img src="../static/img/philosophy-logo.svg" class="d-block mx-lg-auto img-fluid" alt="Bootstrap Themes"
-          width="700" height="500" loading="lazy">
+          width="700" height="500">
       </div>
       <div class="col-lg-6">
         <div class="row">
@@ -141,58 +142,122 @@
     <div class="container">
       <div class="row">
         <div class="col-12 text-center">
-          <h2>SERVICES WE PROVIDES</h2>
+          <h1 class="text-pricelist">SERVICES WE PROVIDES</h1>
         </div>
       </div>
+      <div class="row service-icon">
+        <div class="col-6 col-md-3 ">
+          <div class="circle-services">
+            <div class="rounded-col-content">
+              <div class="circle-icon">
+                <img src="../static/img/icon-cut.svg" alt="" />
+              </div>
+            </div>
+          </div>
+          <h2 class="text-center text-service">HAIRCUT</h2>
+        </div>
+
+        <div class="col-6 col-md-3">
+          <div class="circle-services">
+            <div class="rounded-col-content">
+              <div class="circle-icon">
+                <img src="../static/img/icon-perm.svg" alt="" />
+              </div>
+            </div>
+          </div>
+          <h2 class="text-center text-service">PERM</h2>
+        </div>
+        <div class="col-6 col-md-3">
+          <div class="circle-services">
+            <div class="rounded-col-content">
+              <div class="circle-icon">
+                <img src="../static/img/icon-coloring.svg" alt="" />
+              </div>
+            </div>
+          </div>
+          <h2 class="text-center text-service">COLORING</h2>
+        </div>
+        <div class="col-6 col-md-3">
+          <div class="circle-services">
+            <div class="rounded-col-content">
+              <div class="circle-icon">
+                <img src="../static/img/icon-reambath.svg" alt="" />
+              </div>
+            </div>
+          </div>
+          <h2 class="text-center text-service">CREAMBATH</h2>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- section service end -->
+
+  <!-- section talent start -->
+  <section id="talent">
+    <div class="container">
       <div class="row">
-        <div class="col-md-3">
-          <div class="circle-services">
-            <div class="rounded-col-content">
-              <svg xmlns="http://www.w3.org/2000/svg" width="150" height="150" fill="currentColor"
-                class="bi bi-scissors" viewBox="0 0 16 16">
-                <path
-                  d="M3.5 3.5c-.614-.884-.074-1.962.858-2.5L8 7.226 11.642 1c.932.538 1.472 1.616.858 2.5L8.81 8.61l1.556 2.661a2.5 2.5 0 1 1-.794.637L8 9.73l-1.572 2.177a2.5 2.5 0 1 1-.794-.637L7.19 8.61zm2.5 10a1.5 1.5 0 1 0-3 0 1.5 1.5 0 0 0 3 0m7 0a1.5 1.5 0 1 0-3 0 1.5 1.5 0 0 0 3 0" />
-              </svg>
+        <div class="col-12 text-center">
+          <h1 class="text-style">OUR TALENTED BARBERS</h1>
+        </div>
+      </div>
+
+      <div class="row text-center person-talent">
+        <div class="col-md-4 mt-2">
+          <div class="card bg-talent">
+            <div class="card-body">
+              <img
+                src="../static/img/ravit.png"
+                alt=""
+                class="icon-person-talent"
+              />
+
+              <h2 class="text-talent">Ravit</h2>
+              <h3 class="text-talent-two">Pernah belajar di jepang</h3>
+              <a href="#">
+                <button class="btn-book-talent">BOOK AN APPOINTMENT</button>
+              </a>
             </div>
           </div>
         </div>
-        <div class="col-md-3">
-          <div class="circle-services">
-            <div class="rounded-col-content">
-              <svg xmlns="http://www.w3.org/2000/svg" width="150" height="150" fill="currentColor"
-                class="bi bi-scissors" viewBox="0 0 16 16">
-                <path
-                  d="M3.5 3.5c-.614-.884-.074-1.962.858-2.5L8 7.226 11.642 1c.932.538 1.472 1.616.858 2.5L8.81 8.61l1.556 2.661a2.5 2.5 0 1 1-.794.637L8 9.73l-1.572 2.177a2.5 2.5 0 1 1-.794-.637L7.19 8.61zm2.5 10a1.5 1.5 0 1 0-3 0 1.5 1.5 0 0 0 3 0m7 0a1.5 1.5 0 1 0-3 0 1.5 1.5 0 0 0 3 0" />
-              </svg>
+
+        <div class="col-md-4 mt-2">
+          <div class="card bg-talent">
+            <div class="card-body">
+              <img
+                src="../static/img/ravit.png"
+                alt=""
+                class="icon-person-talent"
+              />
+
+              <h2 class="text-talent">Ravit</h2>
+              <h3 class="text-talent-two">Pernah belajar di jepang</h3>
+              <a href="#">
+                <button class="btn-book-talent">BOOK AN APPOINTMENT</button>
+              </a>
             </div>
           </div>
         </div>
-        <div class="col-md-3">
-          <div class="circle-services">
-            <div class="rounded-col-content">
-              <svg xmlns="http://www.w3.org/2000/svg" width="150" height="150" fill="currentColor"
-                class="bi bi-scissors" viewBox="0 0 16 16">
-                <path
-                  d="M3.5 3.5c-.614-.884-.074-1.962.858-2.5L8 7.226 11.642 1c.932.538 1.472 1.616.858 2.5L8.81 8.61l1.556 2.661a2.5 2.5 0 1 1-.794.637L8 9.73l-1.572 2.177a2.5 2.5 0 1 1-.794-.637L7.19 8.61zm2.5 10a1.5 1.5 0 1 0-3 0 1.5 1.5 0 0 0 3 0m7 0a1.5 1.5 0 1 0-3 0 1.5 1.5 0 0 0 3 0" />
-              </svg>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-3">
-          <div class="circle-services">
-            <div class="rounded-col-content">
-              <svg xmlns="http://www.w3.org/2000/svg" width="150" height="150" fill="currentColor"
-                class="bi bi-scissors" viewBox="0 0 16 16">
-                <path
-                  d="M3.5 3.5c-.614-.884-.074-1.962.858-2.5L8 7.226 11.642 1c.932.538 1.472 1.616.858 2.5L8.81 8.61l1.556 2.661a2.5 2.5 0 1 1-.794.637L8 9.73l-1.572 2.177a2.5 2.5 0 1 1-.794-.637L7.19 8.61zm2.5 10a1.5 1.5 0 1 0-3 0 1.5 1.5 0 0 0 3 0m7 0a1.5 1.5 0 1 0-3 0 1.5 1.5 0 0 0 3 0" />
-              </svg>
+        <div class="col-md-4 mt-2">
+          <div class="card bg-talent">
+            <div class="card-body">
+              <img
+                src="../static/img/ravit.png"
+                alt=""
+                class="icon-person-talent"
+              />
+
+              <h2 class="text-talent">Ravit</h2>
+              <h3 class="text-talent-two">Pernah belajar di jepang</h3>
+              <a href="#">
+                <button class="btn-book-talent">BOOK AN APPOINTMENT</button>
+              </a>
             </div>
           </div>
         </div>
       </div>
     </div>
   </section>
-  <!-- section service end -->
+  <!-- section talent end -->
 
 
   <!-- section pricelist -->
@@ -375,6 +440,584 @@
   </section>
   <!-- end of section hairstyle -->
 
+  <!-- section testimoni start -->
+
+  <section id="testimoni" class="overflow-hidden">
+    <div class="container position-relative">
+      <div class="row">
+        <div class="col-12 text-center">
+          <h1 class="text-pricelist">TESTIMONI</h1>
+        </div>
+      </div>
+
+      <div class="container position-relative">
+        <div class="row containt-testi">
+          <div class="col-12 d-flex justify-content-start">
+            <div class="card-testi me-2">
+              <div class="card-text d-flex">
+                <div class="col-2">
+                  <img src="../static/img/icon-kutip.svg" alt="" />
+                </div>
+                <div class="col-10">
+                  <h5 class="text-testi">
+                    Alhamdulillah so far selalu memuaskan dengan hasil
+                    potongannya. selalu ada diskusi dan masukan untuk
+                    mendapatkan hasil yang diinginkan.
+                  </h5>
+                  <h4 class="text-talent">Ravit</h4>
+                  <div class="stars">
+                    <h4 class="stars">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="16"
+                        height="16"
+                        fill="currentColor"
+                        class="bi bi-star-fill"
+                        viewBox="0 0 16 16"
+                      >
+                        <path
+                          d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"
+                        />
+                      </svg>
+                    </h4>
+                    <h4 class="stars">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="16"
+                        height="16"
+                        fill="currentColor"
+                        class="bi bi-star-fill"
+                        viewBox="0 0 16 16"
+                      >
+                        <path
+                          d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"
+                        />
+                      </svg>
+                    </h4>
+                    <h4 class="stars">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="16"
+                        height="16"
+                        fill="currentColor"
+                        class="bi bi-star-fill"
+                        viewBox="0 0 16 16"
+                      >
+                        <path
+                          d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"
+                        />
+                      </svg>
+                    </h4>
+                    <h4 class="stars">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="16"
+                        height="16"
+                        fill="currentColor"
+                        class="bi bi-star-fill"
+                        viewBox="0 0 16 16"
+                      >
+                        <path
+                          d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"
+                        />
+                      </svg>
+                    </h4>
+                    <h4 class="stars">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="16"
+                        height="16"
+                        fill="currentColor"
+                        class="bi bi-star-fill"
+                        viewBox="0 0 16 16"
+                      >
+                        <path
+                          d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"
+                        />
+                      </svg>
+                    </h4>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="card-testi me-2">
+              <div class="card-text d-flex">
+                <div class="col-2">
+                  <img src="../static/img/icon-kutip.svg" alt="" />
+                </div>
+                <div class="col-10">
+                  <h5 class="text-testi">
+                    Alhamdulillah so far selalu memuaskan dengan hasil
+                    potongannya. selalu ada diskusi dan masukan untuk
+                    mendapatkan hasil yang diinginkan.
+                  </h5>
+                  <h4 class="text-talent">Ravit</h4>
+                  <div class="stars">
+                    <h4 class="stars">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="16"
+                        height="16"
+                        fill="currentColor"
+                        class="bi bi-star-fill"
+                        viewBox="0 0 16 16"
+                      >
+                        <path
+                          d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"
+                        />
+                      </svg>
+                    </h4>
+                    <h4 class="stars">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="16"
+                        height="16"
+                        fill="currentColor"
+                        class="bi bi-star-fill"
+                        viewBox="0 0 16 16"
+                      >
+                        <path
+                          d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"
+                        />
+                      </svg>
+                    </h4>
+                    <h4 class="stars">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="16"
+                        height="16"
+                        fill="currentColor"
+                        class="bi bi-star-fill"
+                        viewBox="0 0 16 16"
+                      >
+                        <path
+                          d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"
+                        />
+                      </svg>
+                    </h4>
+                    <h4 class="stars">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="16"
+                        height="16"
+                        fill="currentColor"
+                        class="bi bi-star-fill"
+                        viewBox="0 0 16 16"
+                      >
+                        <path
+                          d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"
+                        />
+                      </svg>
+                    </h4>
+                    <h4 class="stars">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="16"
+                        height="16"
+                        fill="currentColor"
+                        class="bi bi-star-fill"
+                        viewBox="0 0 16 16"
+                      >
+                        <path
+                          d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"
+                        />
+                      </svg>
+                    </h4>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="card-testi me-2">
+              <div class="card-text d-flex">
+                <div class="col-2">
+                  <img src="../static/img/icon-kutip.svg" alt="" />
+                </div>
+                <div class="col-10">
+                  <h5 class="text-testi">
+                    Alhamdulillah so far selalu memuaskan dengan hasil
+                    potongannya. selalu ada diskusi dan masukan untuk
+                    mendapatkan hasil yang diinginkan.
+                  </h5>
+                  <h4 class="text-talent">Ravit</h4>
+                  <div class="stars">
+                    <h4 class="stars">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="16"
+                        height="16"
+                        fill="currentColor"
+                        class="bi bi-star-fill"
+                        viewBox="0 0 16 16"
+                      >
+                        <path
+                          d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"
+                        />
+                      </svg>
+                    </h4>
+                    <h4 class="stars">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="16"
+                        height="16"
+                        fill="currentColor"
+                        class="bi bi-star-fill"
+                        viewBox="0 0 16 16"
+                      >
+                        <path
+                          d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"
+                        />
+                      </svg>
+                    </h4>
+                    <h4 class="stars">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="16"
+                        height="16"
+                        fill="currentColor"
+                        class="bi bi-star-fill"
+                        viewBox="0 0 16 16"
+                      >
+                        <path
+                          d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"
+                        />
+                      </svg>
+                    </h4>
+                    <h4 class="stars">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="16"
+                        height="16"
+                        fill="currentColor"
+                        class="bi bi-star-fill"
+                        viewBox="0 0 16 16"
+                      >
+                        <path
+                          d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"
+                        />
+                      </svg>
+                    </h4>
+                    <h4 class="stars">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="16"
+                        height="16"
+                        fill="currentColor"
+                        class="bi bi-star-fill"
+                        viewBox="0 0 16 16"
+                      >
+                        <path
+                          d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"
+                        />
+                      </svg>
+                    </h4>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="card-testi me-2">
+              <div class="card-text d-flex">
+                <div class="col-2">
+                  <img src="../static/img/icon-kutip.svg" alt="" />
+                </div>
+                <div class="col-10">
+                  <h5 class="text-testi">
+                    Alhamdulillah so far selalu memuaskan dengan hasil
+                    potongannya. selalu ada diskusi dan masukan untuk
+                    mendapatkan hasil yang diinginkan.
+                  </h5>
+                  <h4 class="text-talent">Ravit</h4>
+                  <div class="stars">
+                    <h4 class="stars">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="16"
+                        height="16"
+                        fill="currentColor"
+                        class="bi bi-star-fill"
+                        viewBox="0 0 16 16"
+                      >
+                        <path
+                          d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"
+                        />
+                      </svg>
+                    </h4>
+                    <h4 class="stars">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="16"
+                        height="16"
+                        fill="currentColor"
+                        class="bi bi-star-fill"
+                        viewBox="0 0 16 16"
+                      >
+                        <path
+                          d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"
+                        />
+                      </svg>
+                    </h4>
+                    <h4 class="stars">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="16"
+                        height="16"
+                        fill="currentColor"
+                        class="bi bi-star-fill"
+                        viewBox="0 0 16 16"
+                      >
+                        <path
+                          d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"
+                        />
+                      </svg>
+                    </h4>
+                    <h4 class="stars">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="16"
+                        height="16"
+                        fill="currentColor"
+                        class="bi bi-star-fill"
+                        viewBox="0 0 16 16"
+                      >
+                        <path
+                          d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"
+                        />
+                      </svg>
+                    </h4>
+                    <h4 class="stars">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="16"
+                        height="16"
+                        fill="currentColor"
+                        class="bi bi-star-fill"
+                        viewBox="0 0 16 16"
+                      >
+                        <path
+                          d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"
+                        />
+                      </svg>
+                    </h4>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="card-testi me-2">
+              <div class="card-text d-flex">
+                <div class="col-2">
+                  <img src="../static/img/icon-kutip.svg" alt="" />
+                </div>
+                <div class="col-10">
+                  <h5 class="text-testi">
+                    Alhamdulillah so far selalu memuaskan dengan hasil
+                    potongannya. selalu ada diskusi dan masukan untuk
+                    mendapatkan hasil yang diinginkan.
+                  </h5>
+                  <h4 class="text-talent">Ravit</h4>
+                  <div class="stars">
+                    <h4 class="stars">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="16"
+                        height="16"
+                        fill="currentColor"
+                        class="bi bi-star-fill"
+                        viewBox="0 0 16 16"
+                      >
+                        <path
+                          d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"
+                        />
+                      </svg>
+                    </h4>
+                    <h4 class="stars">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="16"
+                        height="16"
+                        fill="currentColor"
+                        class="bi bi-star-fill"
+                        viewBox="0 0 16 16"
+                      >
+                        <path
+                          d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"
+                        />
+                      </svg>
+                    </h4>
+                    <h4 class="stars">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="16"
+                        height="16"
+                        fill="currentColor"
+                        class="bi bi-star-fill"
+                        viewBox="0 0 16 16"
+                      >
+                        <path
+                          d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"
+                        />
+                      </svg>
+                    </h4>
+                    <h4 class="stars">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="16"
+                        height="16"
+                        fill="currentColor"
+                        class="bi bi-star-fill"
+                        viewBox="0 0 16 16"
+                      >
+                        <path
+                          d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"
+                        />
+                      </svg>
+                    </h4>
+                    <h4 class="stars">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="16"
+                        height="16"
+                        fill="currentColor"
+                        class="bi bi-star-fill"
+                        viewBox="0 0 16 16"
+                      >
+                        <path
+                          d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"
+                        />
+                      </svg>
+                    </h4>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="card-testi me-2">
+              <div class="card-text d-flex">
+                <div class="col-2">
+                  <img src="../static/img/icon-kutip.svg" alt="" />
+                </div>
+                <div class="col-10">
+                  <h5 class="text-testi">
+                    Alhamdulillah so far selalu memuaskan dengan hasil
+                    potongannya. selalu ada diskusi dan masukan untuk
+                    mendapatkan hasil yang diinginkan.
+                  </h5>
+                  <h4 class="text-talent">Ravit</h4>
+                  <div class="stars">
+                    <h4 class="stars">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="16"
+                        height="16"
+                        fill="currentColor"
+                        class="bi bi-star-fill"
+                        viewBox="0 0 16 16"
+                      >
+                        <path
+                          d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"
+                        />
+                      </svg>
+                    </h4>
+                    <h4 class="stars">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="16"
+                        height="16"
+                        fill="currentColor"
+                        class="bi bi-star-fill"
+                        viewBox="0 0 16 16"
+                      >
+                        <path
+                          d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"
+                        />
+                      </svg>
+                    </h4>
+                    <h4 class="stars">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="16"
+                        height="16"
+                        fill="currentColor"
+                        class="bi bi-star-fill"
+                        viewBox="0 0 16 16"
+                      >
+                        <path
+                          d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"
+                        />
+                      </svg>
+                    </h4>
+                    <h4 class="stars">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="16"
+                        height="16"
+                        fill="currentColor"
+                        class="bi bi-star-fill"
+                        viewBox="0 0 16 16"
+                      >
+                        <path
+                          d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"
+                        />
+                      </svg>
+                    </h4>
+                    <h4 class="stars">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="16"
+                        height="16"
+                        fill="currentColor"
+                        class="bi bi-star-fill"
+                        viewBox="0 0 16 16"
+                      >
+                        <path
+                          d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"
+                        />
+                      </svg>
+                    </h4>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <button
+          class="btn-arrow-left position-absolute start-0 top-50 translate-middle-y"
+        >
+          <img src="../static/img/Arrow-kiri.svg" alt="" />
+        </button>
+
+        <button
+          class="btn-arrow-right position-absolute end-0 top-50 translate-middle-y"
+        >
+          <img src="../static/img/Arrow-kanan.svg" alt="" />
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- section testimoni end -->
+
+  <!-- section post start -->
+  <section id="post">
+    <div class="container-fluid">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4 vidio">
+            <video class="w-100">
+              <source src="../static/img/post.mp4" />
+            </video>
+          </div>
+          <div class="col-md-6 offset-1">
+            <h1 class="text-post">SEE</h1>
+            <h1 class="text-post-1">RAPZ'S POST!</h1>
+            <h5 class="text-post-2">
+              Hair perm merupakan proses dimana rambut kamu di keritingin
+            </h5>
+            <a href="#"><h5 class="text-post-3">See more</h5></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- section post end -->
+
   <!-- section location -->
   <section class="section-location" id="section-location">
     <div class="px-4 py-5 my-5 text-center">
@@ -385,7 +1028,7 @@
       <div class="row flex-lg-row-reverse p-5 align-items-center g-5 py-5">
         <iframe
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d16786.262223280522!2d107.54183429994309!3d-6.886952043354611!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e68e5759c9dfa67%3A0x940783da80eebca2!2sRAPZ%20HAIR%20STUDIO!5e0!3m2!1sid!2sid!4v1717668193379!5m2!1sid!2sid"
-          width="1500" height="500" style="border:0; border-radius:15px" allowfullscreen="" loading="lazy"
+          width="1500" height="500" style="border:0; border-radius:15px" allowfullscreen=""
           referrerpolicy="no-referrer-when-downgrade"></iframe>
       </div>
     </div>
@@ -512,12 +1155,6 @@
     crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   <script src="../static/index.js"></script>
-</body>
-
-</html>
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-  integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
 
 </html>
