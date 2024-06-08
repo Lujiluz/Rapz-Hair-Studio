@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .container {
+        display: flex;
+        flex-direction: column;
+        width: 500px;
+        margin: 0px auto;
+      }
+
+      .container > input {
+        margin-bottom: 10px;
+      }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="../static/addUser.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <input type="text" name="fullName" id="fullName" placeholder="Fullname" />
+      <input type="email" name="email" id="email" placeholder="Email Address" />
+      <input type="password" name="password" id="password" placeholder="password" />
+      <input type="number" name="waNum" id="waNum" placeholder="No. Whatsapp" />
+      <input type="number" name="servicePrice" id="service-price" placeholder="Price per-service" />
+      <label for="profile_image">Profile Image:</label>
+      <input type="file" name="profile_image" id="profile_image" />
+      <img src="" id="preview_img" alt="profile_img" style="display: none" />
+      <select name="role" id="role">
+        <option value="admin">Admin</option>
+        <option value="super_admin">Super Admin</option>
+      </select>
+      <button onclick="handleSubmit()">Submit</button>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,90 @@
+[
+  {
+    "_comment": "Users dummy data",
+    "_id": "a1B2c3D4",
+    "username": "superadmin1",
+    "email": "email@gmail.com",
+    "pw": "****",
+    "wa_num": "000000",
+    "profile_photo": "/static/profile.png",
+    "role": "superadmin",
+    "is_cuti": false,
+    "is_booked": true
+  },
+  {
+    "_id": "e5F6g7H8",
+    "username": "admin1",
+    "email": "email@gmail.com",
+    "pw": "****",
+    "wa_num": "000000",
+    "profile_photo": "/static/profile.png",
+    "role": "admin",
+    "is_cuti": false,
+    "is_booked": false
+  },
+  {
+    "_id": "i9J0k1L2",
+    "username": "admin2",
+    "email": "email@gmail.com",
+    "pw": "****",
+    "wa_num": "000000",
+    "profile_photo": "/static/profile.png",
+    "role": "admin",
+    "is_cuti": true,
+    "is_booked": true
+  },
+  {
+    "_id": "m3N4o5P6",
+    "username": "admin3",
+    "email": "email@gmail.com",
+    "pw": "****",
+    "wa_num": "000000",
+    "profile_photo": "/static/profile.png",
+    "role": "admin",
+    "is_cuti": false,
+    "is_booked": true
+  },
+  {
+    "_id": "q7R8s9T0",
+    "username": "admin4",
+    "email": "email@gmail.com",
+    "pw": "****",
+    "wa_num": "000000",
+    "profile_photo": "/static/profile.png",
+    "role": "admin",
+    "is_cuti": true,
+    "is_booked": false
+  },
+
+  {
+    "_comment": "testimonials dummy data",
+    "_id": "zA1bC2dE",
+    "name": "John Smith",
+    "rate": 9,
+    "testimoni": "Excellent service! The staff was very professional and the haircut was perfect."
+  },
+  {
+    "_id": "fG3hI4jK",
+    "name": "Jane Doe",
+    "rate": 8,
+    "testimoni": "Great experience overall. The ambiance was nice and the barber was skilled."
+  },
+  {
+    "_id": "lM5nO6pQ",
+    "name": "Michael Johnson",
+    "rate": 10,
+    "testimoni": "Best haircut I've ever had! Will definitely come back."
+  },
+  {
+    "_id": "rS7tU8vW",
+    "name": "Emily Davis",
+    "rate": 7,
+    "testimoni": "Good service, but the waiting time was a bit long."
+  },
+  {
+    "_id": "xY9zA0bB",
+    "name": "Chris Brown",
+    "rate": 6,
+    "testimoni": "The haircut was decent, but I expected more based on the reviews."
+  }
+]
