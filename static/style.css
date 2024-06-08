@@ -7,7 +7,6 @@
 body {
   font-family: "Poppins", sans-serif;
   background: url(../static/img/bg-home.svg);
-  color: var(--putih);
 }
 
 /* navbar */
@@ -26,8 +25,8 @@ body {
   font-family: "Poppins", sans-serif;
   font-weight: 600;
   padding: 8px 20px;
-  border: 0;
   border-radius: 50px;
+  text-decoration: none;
   transition: 0.3s;
 }
 
@@ -62,38 +61,66 @@ body {
   color: var(--pink);
 }
 
-/* home section */
-#home{
-  height: 100vh;
-  width: 100%;
+/* home */
+.section-home .container .row {
+  margin-top: 5rem;
+  position: relative;
 }
 
-.home-tagline p{
- margin-bottom: 30px;
-
+.icon-person {
+  position: relative;
+  top: 10rem;
 }
 
-.btn-pesan{
+.moto {
+  margin-right: 5rem;
+}
+
+.btn-pesan {
   background-color: #CC004E;
   color: var(--putih);
-  border: 0;
   border-radius: 0.5rem;
   padding: 8px 20px;
   font-family: "Poppins", sans-serif;
   font-weight: 600;
-  font-size: 26px;
+  font-size: 32px;
   text-decoration: none;
+  margin-right: 10rem;
 }
 
-.btn-pesan:hover{
-  background-color: var(--putih);
+/* about section */
+.section-about {
+  margin-top: 10rem;
+  background-image: url(../static/img/bg-pink.svg);
+}
+
+.about {
+  color: var(--item);
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.text-about {
   color: var(--pink);
+  -webkit-text-stroke: 4px black;
+  font-weight: 1000;
+  font-size: 55px;
 }
 
-.img-home{
-  height: 80%;
-}
 
+/* logophi section */
+.logo-phi {
+  color: white;
+  font-size: 24px;
+  font-weight: normal;
+}
+.text-logophi {
+  color: black;
+  -webkit-text-stroke: 5px var(--pink);
+  font-weight: 1000;
+  font-size: 70px;
+  font-style: italic;
+}
 
 /* serevices section */
 
@@ -114,3 +141,101 @@ body {
   align-items: center;
   justify-content: center;
 }
+
+
+/* pricelist */
+.section-pricelist {
+  background-image: url(../static/img/bg-pink.svg);
+  background-size: cover;
+  padding: 80px 0; 
+}
+.text-pricelist {
+  color: var(--pink);
+  -webkit-text-stroke: 4px black;
+  font-family: "Poppins", sans-serif;
+  font-weight: 1000;
+  font-size: 55px;
+}
+
+/* hair style */
+.text-style {
+  color: black;
+  -webkit-text-stroke: 4px var(--pink);
+  font-family: "Poppins", sans-serif;
+  font-weight: 1000;
+  font-size:55px;
+}
+
+.section-style .card {
+  background-color: var(--pink);
+  border-radius: 20px;
+  color: white;
+}
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.section-style .card {
+  width: 100%;
+  max-width: 300px; 
+  margin: auto;
+}
+
+.swiper-slide {
+  border-radius: 20px;
+}
+/* location */
+.section-location {
+  background-image: url(../static/img/bg-pink.svg);
+}
+.text-location {
+  color: var(--pink);
+  -webkit-text-stroke: 4px black;
+  font-weight: 1000;
+  font-size: 55px;
+}
+
+/* footer */
+.footer {
+  color: white;
+}
+
+.logo-sosmed button {
+  background-color: var(--pink);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+}
+
+@media (max-width: 576px) {
+  .logo-sosmed {
+    flex-direction:column;
+  }
+  
+  .logo-sosmed a {
+    margin-bottom: 10px;
+  }
+}
+
+@media (max-width: 576px) {
+  .footer .col {
+    flex-basis: 100%;
+  }
+}
+
+
+
