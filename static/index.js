@@ -1,29 +1,27 @@
-$(document).ready(function () {
-  $.ajax({
-    type: 'GET',
-    url: '/api/v1/get_user?role=admin',
-    data: {},
-    success: function (response) {
-      console.log(response);
+var swiper = new Swiper(".mySwiper", {
+    slidesPerView: 1,
+    spaceBetween: 30,
+    pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
     },
-  });
+    navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+    },
+    breakpoints: {
+        640: {
+            slidesPerView: 2,
+            spaceBetween: 20,
+        },
+        768: {
+            slidesPerView: 3,
+            spaceBetween: 30,
+        },
+        1024: {
+            slidesPerView: 4,
+            spaceBetween: 40,
+        },
+    },
 });
 
-const handleTestimonials = () => {
-  let name = $('#name').val();
-  let rating = $('input[name="rating"]:checked').val();
-  let review = $('#review').val();
-
-  $.ajax({
-    type: 'POST',
-    url: '/api/v1/add_testimoni',
-    data: {
-      name,
-      rating,
-      review,
-    },
-    success: function (response) {
-      alert(response.result);
-    },
-  });
-};
