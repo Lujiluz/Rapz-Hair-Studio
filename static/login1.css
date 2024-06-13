@@ -83,7 +83,12 @@ body {
 
 a {
   text-decoration: none;
-  color: var(--putih);
+  color: #f099ba;
+  transition: 0.3s;
+}
+
+a:hover {
+  color: #b85e81;
 }
 
 @media (max-width: 768px) {
