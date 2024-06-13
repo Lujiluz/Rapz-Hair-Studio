@@ -360,6 +360,12 @@ body {
 .next-btn {
   color: var(--item);
   font-weight: bolder;
+  background: url(../static/img/bg-pink.svg);
+  padding: 25px;
+  border-radius: 15px;
+  border: 2px solid white;
+}
+.prev-btn {
 }
 
 /* testimoni */
@@ -379,7 +385,7 @@ body {
 }
 
 .text-testi {
-  padding: 0.2rem;
+  padding: 0px 0.2rem;
   font-size: 15px;
   font-weight: bold;
   color: var(--putih);
@@ -387,22 +393,24 @@ body {
   font-family: 'Poppins', sans-serif;
 }
 
-.stars {
+/* .stars {
   display: flex;
   color: #ffcf23;
   padding: 0.2rem;
-}
+} */
 
 .btn-testi {
   background-color: #cc004e;
   color: var(--putih);
-  border: 0;
+  border: none;
   border-radius: 0.5rem;
   padding: 8px 20px;
+  text-align: center;
   font-family: 'Poppins', sans-serif;
   font-weight: bold;
   font-size: 20px;
   text-decoration: none;
+  transition: 0.3s;
 }
 
 .btn-testi:hover {
