@@ -1,0 +1,412 @@
+*,
+::after,
+::before {
+  box-sizing: border-box;
+}
+
+:root {
+  --merah: #cc004e;
+  --pink: #ff3a85;
+  --putih: #fff;
+  --hitam: #282828;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  font-size: 0.875rem;
+  opacity: 1;
+  overflow-y: scroll;
+  margin: 0;
+  background: url(../static/img/bg-home.svg);
+}
+
+a {
+  cursor: pointer;
+  text-decoration: none;
+  font-family: "Poppins", sans-serif;
+}
+
+li {
+  list-style: none;
+}
+
+/* layout admin dashboard skeleton */
+.wrapper {
+  align-items: stretch;
+  display: flex;
+  width: 100%;
+}
+
+#sidebar {
+  max-width: 264px;
+  min-width: 264px;
+  background-color: #ed82a3;
+  transition: all 0.35s ease-in-out;
+  border-top-right-radius: 40px;
+  border-bottom-right-radius: 40px;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  min-width: 0;
+  overflow: hidden;
+  transition: all 0.35s ease-in-out;
+  width: 100%;
+}
+
+/* sidebar elemen */
+.sidebar-logo {
+  border-top-right-radius: 40px;
+  background: var(--merah);
+  padding: 1.25rem;
+  color: var(--putih);
+}
+
+.sidebar-logo img {
+  width: 50%;
+  border-radius: 50%;
+}
+
+.sidebar-nav {
+  flex-grow: 1;
+  list-style: none;
+}
+
+.sidebar-nav li a {
+  position: relative;
+  display: block;
+  width: 100%;
+  display: flex;
+  text-decoration: none;
+  color: var(--putih);
+}
+.sidebar-nav li a:hover {
+  background: url(../static/img/bg-home.svg);
+  border-top-left-radius: 2rem;
+  border-bottom-left-radius: 2rem;
+  transition: 0.35s;
+}
+
+.sidebar-nav li a .icon {
+  position: relative;
+  display: block;
+  min-width: 60px;
+  height: 60px;
+  line-height: 75px;
+  text-align: center;
+}
+.sidebar-nav li a .icon ion-icon {
+  font-size: 1.75rem;
+}
+.sidebar-nav li a .title {
+  position: relative;
+  font-size: 1rem;
+  display: block;
+  padding: 0 10px;
+  height: 60px;
+  line-height: 60px;
+  text-align: start;
+  white-space: nowrap;
+  font-weight: 600;
+}
+
+/* main */
+.navbar .btn span {
+  font-size: 1.76rem;
+  background-color: #414141;
+  border-radius: 0.3rem;
+}
+
+.navbar .btn span:hover {
+  background-color: var(--merah);
+}
+
+.navbar h1 {
+  color: var(--putih);
+  -webkit-text-stroke: 4px var(--merah);
+  margin-left: 300px;
+  font-weight: 1000;
+}
+
+/* card */
+
+.item {
+  background-color: var(--pink);
+  color: var(--putih);
+  border-radius: 2rem;
+  padding: 0.5rem;
+}
+
+.item .text-number {
+  font-size: 18px;
+  font-weight: 600;
+}
+.custom-hr {
+  height: 4px;
+  background-color: var(--putih);
+}
+
+.item .text-number .text-2 {
+  margin-top: -20px;
+  font-size: 24px;
+}
+.item .text-number p span {
+  font-size: 48px;
+}
+
+.item .icon-item {
+  font-size: 2.5rem;
+}
+
+.content {
+  flex: 1;
+  max-width: 100vw;
+  width: 100vw;
+}
+
+.content {
+  flex: 1;
+  max-width: 100vw;
+  width: 100vw;
+}
+
+.item-person {
+  background-color: #414141;
+  color: var(--putih);
+  border-radius: 3rem;
+  padding: 0.5rem;
+  flex-direction: column;
+}
+
+.item-identity-1 {
+  width: 75%;
+}
+
+.name,
+.number,
+.email {
+  background-color: #282828;
+  padding: 0.5rem;
+  margin-top: 5px;
+  border-radius: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.name,
+.number,
+.email span ion-icon {
+  margin-left: auto;
+}
+
+.item-identity-2 {
+  width: 75%;
+}
+
+.item-identity-2 table tr td {
+  font-weight: 600;
+  padding: 6px;
+}
+
+.btn-confirm,
+.btn-cancel {
+  background-color: var(--hitam);
+  color: var(--putih);
+  border: 0;
+  font-weight: 600;
+  border-radius: 1rem;
+  padding: 6px 15px;
+}
+
+.btn-confirm:hover {
+  background-color: #006c32;
+  transition: 0.35s;
+}
+.btn-cancel:hover {
+  background-color: #f7a300;
+  transition: 0.35s;
+}
+
+@media (min-width: 768px) {
+  .content {
+    max-width: auto;
+    width: auto;
+  }
+}
+
+/* sidebar toggle */
+#sidebar.collapsed {
+  margin-left: -264px;
+}
+
+/* footer */
+footer {
+  color: white;
+}
+
+/* main super admin */
+/* dashboard */
+.card-title {
+  padding: 1rem;
+  font-weight: 600;
+}
+.card-subtitle {
+  margin-top: -30px;
+  padding: 1rem;
+}
+.card-table {
+  background-color: #414141;
+  border-radius: 2rem;
+}
+.card-header {
+  color: var(--putih);
+  border-color: var(--putih);
+}
+
+.custom-table {
+  border-collapse: separate;
+  border-spacing: 0 15px;
+  background-color: #414141;
+}
+.custom-table th {
+  background-color: #414141;
+  color: #ffffff;
+  vertical-align: middle;
+}
+.custom-table th,
+.custom-table td {
+  padding: 6px 8px;
+  border-bottom: 1px solid #dee2e6;
+}
+.custom-table tbody tr td {
+  background-color: #414141;
+  color: var(--putih);
+}
+
+/* Persetujuan Cuti */
+.item-person-cuti {
+  background-color: #ad114c;
+  border-radius: 2rem;
+}
+.name-person-cuti {
+  background-color: var(--pink);
+  color: var(--putih);
+  padding: 0.5rem;
+  flex-direction: column;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.img-person-cuti img {
+  width: 60%;
+}
+
+.item-text-cuti {
+  margin-left: 1rem;
+}
+
+.item-text-cuti ion-icon {
+  font-size: 22px;
+}
+.item-text-item {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.text-item-text {
+  margin-left: 1.7rem;
+}
+
+.btn-confirm-cuti {
+  background-color: #006c32;
+  color: var(--putih);
+  border: 0;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  padding: 8px;
+  width: 110px;
+  transition: 0.35s;
+}
+.btn-confirm-cuti:hover {
+  background-color: var(--putih);
+  color: var(--pink);
+}
+.btn-cancel-cuti {
+  background-color: #f7a300;
+  color: var(--putih);
+  border: 0;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  padding: 8px;
+  width: 110px;
+  transition: 0.35s;
+}
+.btn-cancel-cuti:hover {
+  background-color: var(--putih);
+  color: var(--pink);
+}
+
+.add-users a {
+  color: var(--putih);
+  font-size: 2rem;
+}
+
+.item-icon-testi {
+  background-color: #ad114c;
+  border-radius: 1rem;
+}
+.icon-user {
+  color: var(--putih);
+  font-size: 2rem;
+}
+
+.edit {
+  margin-right: 60px;
+}
+.delete {
+  margin-left: 60px;
+}
+
+/* testimoni */
+.item-testi {
+  background-color: #414141;
+  color: var(--putih);
+  border-radius: 1rem;
+  padding: 1rem;
+}
+
+.stars {
+  font-size: 1.5rem;
+}
+
+.choice .icon-testi {
+  color: var(--putih);
+  font-size: 2rem;
+}
+
+.add {
+  margin-right: 20px;
+}
+.trash {
+  margin-left: 20px;
+}
+
+/* add User */
+.input-add {
+  padding: 2rem;
+  color: var(--putih);
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.btn-add,
+.btn-collection {
+  background-color: #ad114c;
+  color: var(--putih);
+  font-weight: 600;
+}
+.btn-collection{
+  margin-top: 3rem;
+}
