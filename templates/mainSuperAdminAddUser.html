@@ -1,0 +1,75 @@
+{% include 'sidebarSuperAdmin.html' %}
+
+<!-- Table data -->
+<div class="container">
+  <div class="card card-table border-0 mt-5">
+    <div class="card-header">
+      <h1 class="card-title">Add New Barbers</h1>
+    </div>
+    <div class="input-add">
+      <form class="row g-3">
+        <div class="col-12">
+          <label for="inputAddress" class="form-label">Fullname</label>
+          <input
+            type="text"
+            class="form-control"
+            id="inputAddress"
+            placeholder="Fullname"
+          />
+        </div>
+
+        <div class="col-md-6">
+          <label for="inputEmail4" class="form-label">Email</label>
+          <input
+            type="email"
+            class="form-control"
+            id="inputEmail4"
+            placeholder="Email addres"
+          />
+        </div>
+        <div class="col-md-6">
+          <label for="inputPassword4" class="form-label">Password</label>
+          <input
+            type="password"
+            class="form-control"
+            id="inputPassword4"
+            placeholder="***"
+          />
+        </div>
+
+        <div class="col-12">
+          <label for="inputAddress2" class="form-label">No.Whatsapp</label>
+          <input
+            type="number"
+            class="form-control"
+            id="inputAddress2"
+            placeholder="08xx-xxxx-xxxx"
+          />
+        </div>
+        <div class="col-12">
+          <label for="inputAddress2" class="form-label"
+            >Price each service</label
+          >
+          <input
+            type="number"
+            class="form-control"
+            id="inputAddress2"
+            placeholder="Rp.xx.xxx"
+          />
+        </div>
+        <div class="col-12">
+          <label for="inputAddress2" class="form-label"
+            >Price each service</label
+          >
+          <input type="file" class="form-control" id="inputAddress2" />
+        </div>
+
+        <div class="d-grid col-2 mx-auto">
+          <button class="btn btn-add" type="button">Add Barbers</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+{% include 'footerAdmin.html' %}
