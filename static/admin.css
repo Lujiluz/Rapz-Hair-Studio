@@ -125,7 +125,7 @@ li {
 
 .navbar h1 {
   color: var(--putih);
-  -webkit-text-stroke: 4px var(--merah);
+  -webkit-text-stroke: 4px var(--pink);
   margin-left: 300px;
   font-weight: 1000;
 }
@@ -133,7 +133,7 @@ li {
 /* card */
 
 .item {
-  background-color: var(--pink);
+  background-color: #33414c;
   color: var(--putih);
   border-radius: 2rem;
   padding: 0.5rem;
@@ -244,6 +244,50 @@ li {
 /* footer */
 footer {
   color: white;
+}
+
+/* admin */
+/* pengajuan cuti */
+.item-cuti{
+  background-color: #414141;
+  color: var(--putih);
+  padding: 2rem;
+  border-radius: 1rem;
+}
+
+.btn-cuti{
+  background: #ad114c;
+  color: var(--putih);
+  font-weight: bold;
+}
+
+.text-data-cuti {
+  padding: 1.6rem;
+}
+.text-data-cuti .text-1{
+  margin-top: 2rem;
+}
+
+.text-data-cuti p{
+  font-size: 18px;
+  font-weight: 600;
+} 
+
+.btn-pengajuan{
+  color: var(--putih);
+  font-weight: bold;
+}
+
+.text-status-cuti {
+  padding: 1rem;
+}
+
+.text-status-cuti p{
+  background-color: #d6e4e5;
+  color: black;
+  font-weight: 600;
+  border-radius: 2rem;
+  padding: 0.5rem;
 }
 
 /* main super admin */

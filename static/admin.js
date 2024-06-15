@@ -7,3 +7,4 @@ document.querySelector(".theme-toggle").addEventListener("click",() => {
     toggleLocalStorage();
     toggleRootClass();
 });
+
