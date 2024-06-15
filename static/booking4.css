@@ -2,8 +2,7 @@
     --pink: #ff3a85;
     --item: #282828;
     --putih: #fff;
-    --card-bg: #cc004e;
-    --card-opacity: 0.6;
+    --card-bg: #a2003e;
     --button-bg: #ffffff;
 }
 
@@ -83,13 +82,37 @@ body {
 /* card */
 .card {
     background-color: var(--card-bg);
-    opacity: var(--card-opacity);
+    color: white;
+    border-radius: 15px;
+}
+
+.card h3 {
+    background-color: var(--pink);
+    color: white;
+    padding: 0.3em;
+    margin: 0;
+    width: calc(100% + 1em);
+    transform: translateX(-0.5em);
+    box-sizing: border-box;
+    text-align: end;
+}
+
+.card p {
+    text-align: end;
+    margin-top: 5px;
+    font-size: 20px;
 }
 
 .card .btn-sm {
     background-color: var(--button-bg);
-    border-color: var(--button-bg);
 }
+
+.card-img-bottom {
+    margin-bottom: 0;
+}
+
+
+
 
 /* button next dan prev */
 .btn-next,
@@ -108,48 +131,28 @@ footer {
     position: fixed;
 }
 
-/* For smaller devices, adjust font sizes and padding */
 @media (max-width: 768px) {
     .judul1 {
-        font-size: 25px;
         -webkit-text-stroke: 1px #ff3a85;
-        margin-left: 10px;
-    }
-
-    .input-title {
-        padding: 40px;
+        font-size: 25px;
     }
 
     .input-title h1 {
         font-size: 20px;
     }
 
-    .card {
-        width: 100%;
-        /* Memastikan card mengambil lebar maksimal */
-        margin-bottom: 15px;
-        /* Menambahkan margin bawah antara card */
-    }
-
-    .card-body {
-        padding: 10px;
-        /* Mengurangi padding pada card body */
-    }
-
-    .card-title {
-        font-size: 16px;
-        /* Ukuran font untuk judul card */
-    }
-
-    .card-text {
+    .input-title .form-label {
         font-size: 14px;
-        /* Ukuran font untuk teks pada card */
+    }
+
+    .input-title .form-control {
+        font-size: 14px;
     }
 
     .btn-next,
     .btn-prev {
         font-size: 14px;
-        padding: 8px 15px;
+        padding: 5px 15px;
     }
 
     footer {

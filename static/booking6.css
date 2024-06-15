@@ -2,8 +2,7 @@
     --pink: #ff3a85;
     --item: #282828;
     --putih: #fff;
-    --card-bg: #cc004e;
-    --card-opacity: 0.6;
+    --card-bg: #a2003e;
     --button-bg: #ffffff;
 }
 
@@ -80,15 +79,40 @@ body {
     color: var(--putih);
 }
 
-/* card */
+/* Card */
 .card {
     background-color: var(--card-bg);
-    opacity: var(--card-opacity);
+    color: white;
+    border-radius: 15px;
+    padding: 20px;
 }
+
+
+.card p {
+    text-align: start;
+    margin-top: 5px;
+    font-size: 18px;
+}
+.card p > span {
+    font-weight: 300;
+}
+
 
 .card .btn-sm {
     background-color: var(--button-bg);
-    border-color: var(--button-bg);
+}
+
+.card-img-bottom {
+    margin-bottom: 0;
+}
+
+/* Notes Section */
+.notes {
+    background-color: var(--card-bg);
+    color: var(--putih);
+    border-radius: 15px;
+    padding: 1.5rem;
+    margin-top: 1rem;
 }
 
 /* button next dan prev */
@@ -102,54 +126,40 @@ body {
     font-family: "Poppins", sans-serif;
     font-weight: bold
 }
+.btn-cancel,
+.btn-back {
+    background-color: #cc004e;
+    color: var(--putih);
+    font-weight: bold;
+}
 
 footer {
     color: var(--pink);
     position: fixed;
 }
 
-/* For smaller devices, adjust font sizes and padding */
 @media (max-width: 768px) {
     .judul1 {
-        font-size: 25px;
         -webkit-text-stroke: 1px #ff3a85;
-        margin-left: 10px;
-    }
-
-    .input-title {
-        padding: 40px;
+        font-size: 25px;
     }
 
     .input-title h1 {
         font-size: 20px;
     }
 
-    .card {
-        width: 100%;
-        /* Memastikan card mengambil lebar maksimal */
-        margin-bottom: 15px;
-        /* Menambahkan margin bawah antara card */
-    }
-
-    .card-body {
-        padding: 10px;
-        /* Mengurangi padding pada card body */
-    }
-
-    .card-title {
-        font-size: 16px;
-        /* Ukuran font untuk judul card */
-    }
-
-    .card-text {
+    .input-title .form-label {
         font-size: 14px;
-        /* Ukuran font untuk teks pada card */
+    }
+
+    .input-title .form-control {
+        font-size: 14px;
     }
 
     .btn-next,
     .btn-prev {
         font-size: 14px;
-        padding: 8px 15px;
+        padding: 5px 15px;
     }
 
     footer {
