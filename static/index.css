@@ -6,7 +6,6 @@
 
 body {
   font-family: 'Poppins', sans-serif;
-  background: url(../static/img/bg-home.svg);
 }
 
 /* navbar */
@@ -72,18 +71,18 @@ body {
 }
 
 /* home */
+#section-home {
+  padding: 100px 0;
+  background-image: url(../static/img/bg-home.svg);
+  background-size: cover;
+}
 .section-home .container .row {
-  margin-top: 5rem;
   position: relative;
 }
 
 .icon-person {
   position: relative;
-  top: 10rem;
-}
-
-.moto {
-  margin-right: 5rem;
+  top: 6.3rem;
 }
 
 .btn-pesan {
@@ -140,8 +139,9 @@ body {
 
 /* about section */
 .section-about {
-  margin-top: 10rem;
+  padding: 100px 0;
   background-image: url(../static/img/bg-pink.svg);
+  background-size: cover;
 }
 
 .about {
@@ -158,6 +158,11 @@ body {
 }
 
 /* logophi section */
+#logophi {
+  padding: 100px 0;
+  background-image: url(../static/img/bg-home.svg);
+  background-size: cover;
+}
 .logo-phi {
   color: white;
   font-size: 24px;
@@ -174,8 +179,9 @@ body {
 
 /* services section */
 #service {
-  background: url(../static/img/bg-pink.svg);
   padding: 100px 0;
+  background: url(../static/img/bg-pink.svg);
+  background-size: cover;
 }
 
 .service-icon {
@@ -239,6 +245,8 @@ body {
 /* talent section */
 #talent {
   padding: 100px 0;
+  background-image: url(../static/img/bg-home.svg);
+  background-size: cover;
 }
 
 .bg-talent {
@@ -304,9 +312,9 @@ body {
 
 /* pricelist */
 .section-pricelist {
+  padding: 100px 0;
   background-image: url(../static/img/bg-pink.svg);
   background-size: cover;
-  padding: 80px 0;
 }
 
 .text-pricelist {
@@ -318,6 +326,11 @@ body {
 }
 
 /* hair style */
+#hairstyle {
+  padding: 100px 0;
+  background-image: url(../static/img/bg-home.svg);
+  background-size: cover;
+}
 .text-style {
   color: black;
   -webkit-text-stroke: 4px var(--pink);
@@ -370,8 +383,9 @@ body {
 
 /* testimoni */
 #testimoni {
-  background: url(../static/img/bg-pink.svg);
   padding: 100px 0;
+  background: url(../static/img/bg-pink.svg);
+  background-size: cover;
 }
 
 .card-testi {
@@ -420,7 +434,7 @@ body {
 
 /* input testi */
 #input-testi {
-  padding: 80px 0;
+  padding: 100px 0;
 }
 
 .text-input-testi {
@@ -454,10 +468,10 @@ body {
 #post {
   padding: 100px 0;
   background: url(../static/img/bg-home.svg);
+  background-size: cover;
 }
 
 .text-post {
-  margin-top: 40px;
   color: black;
   -webkit-text-stroke: 4px #ff3a85;
   font-style: italic;
@@ -501,7 +515,9 @@ body {
 }
 /* location */
 .section-location {
+  padding: 100px 0;
   background-image: url(../static/img/bg-pink.svg);
+  background-size: cover;
 }
 
 .text-location {
@@ -514,6 +530,10 @@ body {
 /* FAQ */
 #FAQ {
   padding: 80px 0;
+}
+
+.faq {
+  color: #cc004e;
 }
 
 .text-faq-1 {
@@ -542,7 +562,12 @@ body {
 }
 
 /* footer */
-.footer {
+#footer {
+  padding: 100px 0;
+  background: url(../static/img/bg-home.svg);
+  background-size: cover;
+}
+.text-footer {
   color: white;
 }
 
@@ -555,10 +580,6 @@ body {
   align-items: center;
   justify-content: center;
   padding: 0;
-}
-
-.faq {
-  color: #cc004e;
 }
 
 @media (max-width: 576px) {
@@ -574,6 +595,8 @@ body {
 @media (max-width: 576px) {
   .footer .col {
     flex-basis: 100%;
+    display: flex;
+    flex-direction: column;
   }
 
   .rating {

@@ -16,9 +16,6 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Lexend:wght@100..900&family=Manrope:wght@200..800&family=Noto+Serif+Display:ital,wght@0,100..900;1,100..900&family=Nunito:wght@300&family=Open+Sans:wght@500&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Sora:wght@100..800&display=swap"
         rel="stylesheet" />
-    <!-- swiper -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-
     <!-- logo title bar -->
     <link rel="icon" href="../static/img/logo.svg" type="image/x-icon" />
 
@@ -27,49 +24,7 @@
 
 <body>
     <!-- navbar -->
-    <nav class="navbar navbar-dark bg-dark navbar-expand-lg">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#section-home">
-                <img src="../static/img/logo.svg" width="80" alt="" />
-            </a>
-
-            <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasDarkNavbar"
-                aria-labelledby="offcanvasDarkNavbarLabel">
-                <div class="offcanvas-header">
-                    <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">
-                        <img src="../static/img/logo.svg" width="80" alt="" />
-                    </h5>
-                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"
-                        aria-label="Close"></button>
-                </div>
-                <div class="offcanvas-body">
-                    <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
-                        <li class="nav-item">
-                            <a class="nav-link mx-lg-2" aria-current="page" href="index.html">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link mx-lg-2" href="index.html">About Us</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link mx-lg-2" href="index.html">Services</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link mx-lg-2" href="index.html">Pricelist</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link mx-lg-2" href="faq.html">FAQ</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-
-            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
-                data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar"
-                aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-        </div>
-    </nav>
+    {% include 'navbar.html'%}
     <!-- end of navbar -->
 
     <!-- isian -->
@@ -79,16 +34,14 @@
     <img src="../static/img/icon_person.svg" alt="" class="icon-person mt-5">
 
     <div class="text-center">
-        <a href="#" class="btn-pesan">PESAN SEKARANG</a>
+        <a href="booking2.html" class="btn-pesan">PESAN SEKARANG</a>
     </div>
     <!-- end of isian -->
-
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <script src="../static/index.js"></script>
 </body>
 
 </html>

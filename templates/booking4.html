@@ -9,7 +9,7 @@
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
     <!-- style css -->
-    <link rel="stylesheet" href="../static/booking2.css" />
+    <link rel="stylesheet" href="../static/booking4.css" />
     <!-- fonts awesome -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -26,7 +26,7 @@
     <!-- navbar -->
     {% include 'navbar.html'%}
 
-    <!-- isi -->
+    <!-- Isian -->
     <div class="container" id="title1">
         <div class="row">
             <h1 class="judul1 mt-5">Book an Appointment</h1>
@@ -34,38 +34,61 @@
 
         <div class="row mt-4">
             <div class="container input-title">
-                <h1>Complete Your Data</h1>
+                <h1 class="mb-3">Choose Barbers</h1>
 
-                <div class="mb-3">
-                    <label for="formGroupExampleInput" class="form-label">Name</label>
-                    <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Full Name" />
+                <div class="row row-cols-1 row-cols-md-3 g-4">
+                    <div class="col">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <h3 class="card-title">Ntuy</h3>
+                                <p class="card-text">55K</p>
+                            </div>
+                            <img src="../static/img/ntuy.png" class="card-img-bottom" alt="...">
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <h3 class="card-title">Daud</h3>
+                                <p class="card-text">55K</p>
+                            </div>
+                            <img src="../static/img/daud.png" class="card-img-bottom" alt="...">
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <h3 class="card-title">Ravit</h3>
+                                <p class="card-text">75K</p>
+                            </div>
+                            <img src="../static/img/ravit.png" class="card-img-bottom" alt="...">
+                        </div>
+                    </div>
                 </div>
-                <div class="mb-3">
-                    <label for="formGroupExampleInput" class="form-label">Phone Number (WA)</label>
-                    <input type="text" class="form-control" id="formGroupExampleInput" placeholder="08xx-xxxx-xxxx" />
-                </div>
-                <div class="mb-5">
-                    <label for="formGroupExampleInput" class="form-label">Email</label>
-                    <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Email Adress" />
-                </div>
+
+
 
                 <div class="col-mb-3">
-                    <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                    <div class="d-grid gap-2 d-md-flex justify-content-between">
                         <a href="booking3.html">
-                            <button class="btn-next mt-5" type="button">Next</button>
+                            <button class="btn-prev mt-5 " type="button">Previous</button>
+                        </a>
+                        <a href="booking5.html">
+                            <button class="btn-next mt-5 " type="button">Next</button>
                         </a>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+    <!-- end of isian -->
 
     <!-- Footer -->
     <footer class="fixed-bottom">
         <p class="text-center faq">Copyright © 2024 All Rights by Zhepyrus</p>
     </footer>
 
-    <!-- bootstrapt -->
+    <!-- bootstrap -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
