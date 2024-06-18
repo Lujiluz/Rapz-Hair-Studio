@@ -17,8 +17,14 @@
       rel="stylesheet"
     />
     <!-- style css -->
+    <!-- jquery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js"></script>
+
     <!-- <link rel="stylesheet" href="../static/login1.css" /> -->
     <link rel="stylesheet" href="{{ url_for('static', filename='login1.css' ) }}" />
+    <!-- external js -->
+    <script src="{{url_for('static', filename='adminLogin.js' )}}"></script>
   </head>
 
   <body>
@@ -52,12 +58,12 @@
           </div>
           <div class="mb-3">
             <label for="password" class="form-label">Password</label>
-            <input type="email" class="form-control" id="password" />
+            <input type="password" class="form-control" id="password" />
             <div class="mb-3 mt-2 text-end">
               <a href="#" class="forgot-pw-link">Forgot Password?</a>
             </div>
 
-            <button class="btn">Log In</button>
+            <button class="btn" onclick="handleLogin('admin')">Log In</button>
           </div>
         </div>
       </div>

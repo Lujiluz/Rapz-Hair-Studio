@@ -1,10 +1,12 @@
-from datetime import datetime
+from datetime import datetime, timedelta
 import hashlib
 from flask import Flask, Blueprint,redirect,url_for,render_template,request, jsonify
 from dotenv import load_dotenv
 import os
 from os.path import join, dirname
 from pymongo import MongoClient
+import jwt
+
 
 api_bp = Blueprint('api', __name__)
 
@@ -20,6 +22,74 @@ db = client[DB_NAME]
 
 
 UPLOAD_FOLDER = 'static/assets/img/profiles'
+
+
+@api_bp.route('/api/v1/admin_login', methods=['POST'])
+def admin_login():
+  """endpoint untuk handle login
+  """
+  data = request.get_json()
+  role = data.get('role')
+  if role == 'admin':
+    username = data.get('username')
+    print(username)
+    password = data.get('password')
+    print(password)
+    hashed_pw = hashlib.sha256(password.encode('utf-8')).hexdigest()
+
+    isUser = db.users.find_one({
+      'fullName': username,
+      'password': hashed_pw,
+      'role': role
+    })
+    # print(isUser)
+    if isUser:
+      payload = {
+        'id': username,
+        'exp': datetime.now() + timedelta(seconds=60 * 60 * 24)
+      }
+      token = jwt.encode(payload, SECRET_KEY, algorithm='HS256')
+      return jsonify({
+        'code': 200,
+        'result': 'success',
+        'token': token,
+        'role': 'admin'
+      })
+    else:
+      return jsonify({
+        'code': 401,
+        'result': 'failed',
+        'msg': "Username/password-nya salah, aa.."
+      })
+  elif role == 'super_admin':
+    username = data.get('username')
+    password = data.get('password')
+    hashed_pw = hashlib.sha256(password.encode('utf-8')).hexdigest()
+
+    isUser = db.users.find_one({
+      'fullName': username,
+      'password': hashed_pw,
+      'role': role
+    })
+    print(isUser)
+    if isUser:
+      payload = {
+        'id': username,
+        'exp': datetime.now() + timedelta(seconds=60 * 60 * 24)
+      }
+      token = jwt.encode(payload, SECRET_KEY, algorithm='HS256')
+      return jsonify({
+        'code': 200,
+        'result': 'success',
+        'token': token,
+        'role': 'super_admin'
+      })
+    else:
+      return jsonify({
+        'code': 401,
+        'result': 'failed',
+        'msg': "Username/password-nya salah, aa.."
+      })
 
 
 @api_bp.route('/api/v1/get_user')
@@ -43,42 +113,45 @@ def get_user():
   data = list(db.users.find({}, {'_id': False}))
   return jsonify({'result': 'success', 'users': data})
 
-@api_bp.route('/api/v1/add_user', methods=['POST'])
+@api_bp.route('/api/v1/add_user', methods=['GET', 'POST'])
 def add_user():
     """endpoint untuk menambahkan user (admin) baru
     """
     
-    fullName = request.form['fullName']
-    email = request.form['email']
-    password = request.form['password']
-    hashed_pw = hashlib.sha256(password.encode('utf-8')).hexdigest()
-    waNum = request.form['waNum']
-    role = request.form['role']
-    pricePerService = request.form['pricePerService']
-    profile_img = request.files['profile_img']
-    curr_date = datetime.now().strftime('%d%m%Y-%H%M%S')
-    
-    if profile_img:
-        img_name = profile_img.filename
-        img_path = os.path.join(UPLOAD_FOLDER, f'{curr_date}_{img_name}')
-        profile_img.save(img_path)
-    else:
-        img_name = None
-    data = {
-            'fullName': fullName,
-            'email': email,
-            'profile_img': img_path,
-            'password': hashed_pw,
-            'wa_num': waNum,
-            'price_per_service': pricePerService,
-            'role': role,
-            'is_cuti': False,
-        }
-    
-    db.users.insert_one(data)
-    return jsonify({
-        'result': 'success'
-        })
+    if request.method == 'POST':
+      
+      fullName = request.form['fullName']
+      email = request.form['email']
+      password = request.form['password']
+      hashed_pw = hashlib.sha256(password.encode('utf-8')).hexdigest()
+      waNum = request.form['waNum']
+      role = request.form['role']
+      pricePerService = request.form['pricePerService']
+      profile_img = request.files['profile_img']
+      curr_date = datetime.now().strftime('%d%m%Y-%H%M%S')
+      
+      if profile_img:
+          img_name = profile_img.filename
+          img_path = os.path.join(UPLOAD_FOLDER, f'{curr_date}_{img_name}')
+          profile_img.save(img_path)
+      else:
+          img_name = None
+      data = {
+              'fullName': fullName,
+              'email': email,
+              'profile_img': img_path,
+              'password': hashed_pw,
+              'wa_num': waNum,
+              'price_per_service': pricePerService,
+              'role': role,
+              'is_cuti': False,
+          }
+      
+      db.users.insert_one(data)
+      return jsonify({
+          'result': 'success'
+          })
+    return render_template('newUser.html')
 
 @api_bp.route('/api/v1/get_testimoni', methods=['GET'])
 def get_testimoni():

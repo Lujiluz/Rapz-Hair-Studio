@@ -17,7 +17,6 @@
       }
     </style>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="../static/addUser.js"></script>
   </head>
   <body>
     <div class="container">
@@ -35,5 +34,6 @@
       </select>
       <button onclick="handleSubmit()">Submit</button>
     </div>
+    <script src="{{ url_for('static', filename='addUser.js') }}"></script>
   </body>
 </html>

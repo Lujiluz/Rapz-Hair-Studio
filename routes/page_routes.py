@@ -25,12 +25,17 @@ def testimoni_page():
 def faq():
     return render_template('faq.html')
 
+@web_bp.route('/super_admin/dashboard',methods=['GET','POST'])
+def super_admin_dashboard():
+    return render_template('mainSuperAdminDashboard.html')
+
+@web_bp.route('/admin/dashboard',methods=['GET','POST'])
+def admin_dashboard():
+    return render_template('mainAdminBooking.html')
 
     """
     
-@app.route('/',methods=['GET','POST'])
-def home():
-    return render_template('mainSuperAdminDashboard.html')
+
 
 @app.route('/Persetujuan_cuti',methods=['GET','POST'])
 def persetujuan():
