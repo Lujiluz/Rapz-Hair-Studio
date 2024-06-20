@@ -126,7 +126,6 @@ li {
 .navbar h1 {
   color: var(--putih);
   -webkit-text-stroke: 4px var(--pink);
-  margin-left: 300px;
   font-weight: 1000;
 }
 
@@ -321,7 +320,7 @@ footer {
 }
 .custom-table th,
 .custom-table td {
-  padding: 6px 8px;
+  padding: 6px 4px;
   border-bottom: 1px solid #dee2e6;
 }
 .custom-table tbody tr td {
@@ -450,6 +449,10 @@ footer {
   background-color: #ad114c;
   color: var(--putih);
   font-weight: 600;
+}
+.btn-collection:hover{
+  color: var(--pink);
+  background-color: var(--putih);
 }
 .btn-collection{
   margin-top: 3rem;

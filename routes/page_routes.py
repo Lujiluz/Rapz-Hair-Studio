@@ -25,13 +25,36 @@ def testimoni_page():
 def faq():
     return render_template('faq.html')
 
-@web_bp.route('/super_admin/dashboard',methods=['GET','POST'])
+# routes admin
+@web_bp.route('/admin',methods=['GET','POST'])
+def admin_booking():
+    return render_template('mainAdminBooking.html')
+
+@web_bp.route('/admin/pengajuan_cuti',methods=['GET','POST'])
+def admin_pengajuan_cuti():
+    return render_template('mainAdminPengajuanCuti.html')
+
+
+# routes super admin
+@web_bp.route('/superadmin/dashboard',methods=['GET','POST'])
 def super_admin_dashboard():
     return render_template('mainSuperAdminDashboard.html')
 
-@web_bp.route('/admin/dashboard',methods=['GET','POST'])
-def admin_dashboard():
-    return render_template('mainAdminBooking.html')
+@web_bp.route('/superadmin/persetujuan_cuti')
+def super_admin_persetujuan_cuti():
+    return render_template('mainSuperAdminPersetujuanCuti.html')
+
+@web_bp.route('/superadmin/users')
+def super_admin_users():
+    return render_template('mainSuperAdminUsers.html')
+
+@web_bp.route('/superadmin/add_users')
+def super_admin_add_users():
+    return render_template('mainSuperAdminAddUser.html')
+
+@web_bp.route('/superadmin/testimoni')
+def super_admin_testimoni():
+    return render_template('mainSuperAdminTestimoni.html')
 
     """
     
