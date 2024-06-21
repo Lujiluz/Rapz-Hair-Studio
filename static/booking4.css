@@ -83,6 +83,13 @@ body {
   background-color: var(--card-bg);
   color: white;
   border-radius: 15px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.card-is-selected {
+  box-shadow: 0 0.5rem 1rem rgba(207, 207, 207, 0.15) !important;
+  transform: scale(105%);
 }
 
 .card h3 {

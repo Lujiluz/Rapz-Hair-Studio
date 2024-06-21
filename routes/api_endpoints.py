@@ -242,4 +242,12 @@ def get_services():
       'result': 'success',
       'services': data
     })
+  
+@api_bp.route('/api/v1/addOrder', methods=['POST'])
+def add_order():
+  """API endpoint untuk memasukkan data order ke database
+  """
+  booking_data = request.get_json()
+  db.orders.insert_one(booking_data)
+  return jsonify({'result': 'success', 'msg': 'Booking kamu berhasil dibuat. Jangan lupa dateng~👌'})
 
