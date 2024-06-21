@@ -56,6 +56,14 @@ def super_admin_add_users():
 def super_admin_testimoni():
     return render_template('mainSuperAdminTestimoni.html')
 
+@web_bp.route('/booking')
+def booking_page():
+    return render_template('main_booking_page.html')
+
+@web_bp.route('/booking/<pagenum>')
+def booking_form_page(pagenum):
+    return render_template(f'booking_page_{pagenum}.html')
+        
     """
     
 
