@@ -36,23 +36,23 @@ def admin_pengajuan_cuti():
 
 
 # routes super admin
-@web_bp.route('/superadmin/dashboard',methods=['GET','POST'])
+@web_bp.route('/super_admin/dashboard',methods=['GET','POST'])
 def super_admin_dashboard():
     return render_template('mainSuperAdminDashboard.html')
 
-@web_bp.route('/superadmin/persetujuan_cuti')
+@web_bp.route('/super_admin/persetujuan_cuti')
 def super_admin_persetujuan_cuti():
     return render_template('mainSuperAdminPersetujuanCuti.html')
 
-@web_bp.route('/superadmin/users')
+@web_bp.route('/super_admin/users')
 def super_admin_users():
     return render_template('mainSuperAdminUsers.html')
 
-@web_bp.route('/superadmin/add_users')
+@web_bp.route('/super_admin/add_users')
 def super_admin_add_users():
     return render_template('mainSuperAdminAddUser.html')
 
-@web_bp.route('/superadmin/testimoni')
+@web_bp.route('/super_admin/testimoni')
 def super_admin_testimoni():
     return render_template('mainSuperAdminTestimoni.html')
 

@@ -203,7 +203,6 @@ body {
 .circle-services {
   border-radius: 50%;
   padding-top: 100%;
-
   position: relative;
   background-color: var(--pink);
 }
@@ -439,8 +438,8 @@ body {
   font-weight: 1000;
 }
 
-.footer-testi-faq{
-  padding:5px 0;
+.footer-testi-faq {
+  padding: 5px 0;
   background-image: url(../static/img/bg-home.svg);
   background-size: cover;
 }
