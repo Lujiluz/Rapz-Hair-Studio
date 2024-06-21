@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- bootstrapt -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+    <!-- style css -->
+    <link rel="stylesheet" href="../static/booking6.css" />
+    <!-- fonts awesome -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Lexend:wght@100..900&family=Manrope:wght@200..800&family=Noto+Serif+Display:ital,wght@0,100..900;1,100..900&family=Nunito:wght@300&family=Open+Sans:wght@500&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Sora:wght@100..800&display=swap"
+      rel="stylesheet"
+    />
+    <!-- logo title bar -->
+    <link rel="icon" href="../static/img/logo.svg" type="image/x-icon" />
+
+    <title>Booking | Rapz Hair Studio</title>
+  </head>
+
+  <body>
+    <!-- navbar -->
+    {% include 'navbar.html'%}
+
+    <!-- Isian -->
+    <div class="container" id="title1">
+      <div class="row">
+        <h1 class="judul1 mt-5">Book an Appointment</h1>
+      </div>
+
+      <div class="row mt-4">
+        <div class="container input-title">
+          <h1 class="mb-3">Appointment Detail</h1>
+
+          <!-- Detail Cards -->
+          <div class="row">
+            <div class="col-md-6 mb-4">
+              <div class="card p-3 h-100 px-3 py-3">
+                <p>Name: <span>Your Name</span></p>
+                <p>Phone Number: <span>08xx - xxxx - xxxx</span></p>
+                <p>Email: <span>yourname@gmail.com</span></p>
+                <p>Date: <span>Saturday, 25 May 2024</span></p>
+                <p>Time: <span>10.00 - 13.00</span></p>
+              </div>
+            </div>
+            <div class="col-md-6 mb-4">
+              <div class="card p-3 h-100">
+                <p>Services</p>
+                <p>Hair Cut <span class="float-end">Rp. 55.000</span></p>
+                <p>Hair Perm <span class="float-end">Rp. 300.000</span></p>
+                <p>Barbers</p>
+                <p>Ravit <span class="float-end">Rp. 75.000</span></p>
+                <hr />
+                <p>Amount to pay <span class="float-end">Rp. 430.000</span></p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Notes Section -->
+          <div class="row">
+            <div class="col-12">
+              <div class="notes">
+                <label for="notes" class="form-label">Notes:</label>
+                <textarea class="form-control" id="notes" rows="3" placeholder="Put your notes in here"></textarea>
+              </div>
+            </div>
+          </div>
+
+          <!-- button next/prev -->
+          <div class="col-mb-3">
+            <div class="d-grid gap-2 d-md-flex justify-content-between">
+              <a href="/booking/4">
+                <button class="btn-prev mt-5" type="button">Previous</button>
+              </a>
+              <a href="/booking/6">
+                <button class="btn-next mt-5" type="button">Next</button>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- end of isian -->
+
+    <!-- Footer -->
+    <footer class="fixed-bottom">
+      <p class="text-center faq">Copyright © 2024 All Rights by Zhepyrus</p>
+    </footer>
+
+    <!-- bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  </body>
+</html>
