@@ -41,10 +41,12 @@ def booking_page():
 def booking_form_page(pagenum):
     return render_template(f'booking_page_{pagenum}.html')
         
+# page routing admin dashboard
+@web_bp.route('/admin/pengajuan_cuti')
+def pengajuan_cuti_page():
+    return render_template('mainAdminPengajuanCuti.html')
+# page routing super admin dashboard
     """
-    
-
-
 @app.route('/Persetujuan_cuti',methods=['GET','POST'])
 def persetujuan():
     return render_template('mainSuperAdminPersetujuanCuti.html')

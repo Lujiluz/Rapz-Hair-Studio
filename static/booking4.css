@@ -1,161 +1,201 @@
 :root {
-    --pink: #ff3a85;
-    --item: #282828;
-    --putih: #fff;
-    --card-bg: #a2003e;
-    --button-bg: #ffffff;
+  --pink: #ff3a85;
+  --item: #282828;
+  --putih: #fff;
+  --card-bg: #a2003e;
+  --button-bg: #ffffff;
 }
 
 body {
-    font-family: "Poppins", sans-serif;
-    background: url(../static/img/bg-home.svg);
-
+  font-family: 'Poppins', sans-serif;
+  background: url(../static/img/bg-home.svg);
 }
 
 /* navbar */
 .navbar {
-    background-image: url(../static/img/bg-navbar.svg);
-    background-size: cover;
-    background-repeat: no-repeat;
-    height: 80px;
-    padding: 1.4rem 7%;
+  background-image: url(../static/img/bg-navbar.svg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 80px;
+  padding: 1.4rem 7%;
 }
 
 .navbar-toggler {
-    border: none;
-    font-size: 1.25rem;
+  border: none;
+  font-size: 1.25rem;
 }
 
 .navbar-toggler:hover {
-    background-color: var(--item);
-    transition: 0.5s;
-    border-radius: 20%;
+  background-color: var(--item);
+  transition: 0.5s;
+  border-radius: 20%;
 }
 
 .navbar-toggler:focus,
 .btn-close:focus {
-    box-shadow: none;
-    outline: none;
+  box-shadow: none;
+  outline: none;
 }
 
 .nav-link {
-    color: var(--putih);
-    font-family: "Poppins", sans-serif;
-    font-weight: 600;
+  color: var(--putih);
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
 }
 
 .nav-link:hover {
-    color: var(--pink);
+  color: var(--pink);
 }
 
 @media (max-width: 992px) {
-    .d-lg-block {
-        display: none !important;
-    }
+  .d-lg-block {
+    display: none !important;
+  }
 
-    .d-lg-none {
-        display: block !important;
-    }
+  .d-lg-none {
+    display: block !important;
+  }
 }
 
 /* isian */
 #title1 {
-    padding: 80px 0;
+  padding: 80px 0;
 }
 
 .judul1 {
-    color: black;
-    -webkit-text-stroke: 2px #ff3a85;
-    font-family: "Poppins", sans-serif;
-    font-size: 40px;
-    font-weight: 1000;
+  color: black;
+  -webkit-text-stroke: 2px #ff3a85;
+  font-family: 'Poppins', sans-serif;
+  font-size: 40px;
+  font-weight: 1000;
 }
 
 .input-title {
-    border-radius: 30px;
-    background-color: #414141;
-    padding: 80px;
-    font-weight: 500;
-    color: var(--putih);
+  border-radius: 30px;
+  background-color: #414141;
+  padding: 80px;
+  font-weight: 500;
+  color: var(--putih);
 }
 
 /* card */
 .card {
-    background-color: var(--card-bg);
-    color: white;
-    border-radius: 15px;
+  background-color: var(--card-bg);
+  color: white;
+  border-radius: 15px;
 }
 
 .card h3 {
-    background-color: var(--pink);
-    color: white;
-    padding: 0.3em;
-    margin: 0;
-    width: calc(100% + 1em);
-    transform: translateX(-0.5em);
-    box-sizing: border-box;
-    text-align: end;
+  background-color: var(--pink);
+  color: white;
+  padding: 0.3em;
+  margin: 0;
+  width: calc(100% + 1em);
+  transform: translateX(-0.5em);
+  box-sizing: border-box;
+  text-align: end;
 }
 
 .card p {
-    text-align: end;
-    margin-top: 5px;
-    font-size: 20px;
+  text-align: end;
+  margin-top: 5px;
+  font-size: 20px;
 }
 
 .card .btn-sm {
-    background-color: var(--button-bg);
+  background-color: var(--button-bg);
 }
 
 .card-img-bottom {
-    margin-bottom: 0;
+  margin-bottom: 0;
 }
-
-
-
 
 /* button next dan prev */
 .btn-next,
 .btn-prev {
-    background-color: #cc004e;
-    color: var(--putih);
-    border: 0;
-    border-radius: 0.5rem;
-    padding: 8px 20px;
-    font-family: "Poppins", sans-serif;
-    font-weight: bold
+  background-color: #cc004e;
+  color: var(--putih);
+  border: 0;
+  border-radius: 0.5rem;
+  padding: 8px 20px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: bold;
 }
 
 footer {
-    color: var(--pink);
-    position: fixed;
+  color: var(--pink);
+  position: fixed;
 }
 
+/* date picker styling */
+/* Custom styles for the datepicker */
+/* Custom styles for the datepicker */
+.datepicker {
+  background-color: #282828; /* Background color of the datepicker */
+  color: #fff; /* Text color */
+  border: none; /* Remove border */
+  padding: 15px; /* Add padding */
+  width: 320px; /* Adjust width */
+}
+
+.datepicker table {
+  width: 100%; /* Ensure table takes full width of the container */
+}
+
+.datepicker table tr td,
+.datepicker table tr th {
+  border: 1px solid #fff; /* Border color for cells */
+  color: #fff; /* Text color for cells */
+  background-color: #282828; /* Background color for cells */
+  padding: 10px; /* Add padding to cells */
+  height: 45px; /* Adjust height of cells */
+}
+
+.datepicker-days .day {
+  color: #fff; /* Text color for the days */
+}
+
+.datepicker-days .day:hover {
+  background-color: #444444; /* Background color on hover */
+}
+
+.datepicker-days .active,
+.datepicker-days .today {
+  background-color: #860c3b; /* Background color for selected and today's date */
+  color: #fff; /* Text color for selected and today's date */
+}
+
+.datepicker-days .disabled {
+  color: #b3b3b3; /* Text color for disabled dates */
+}
+
+/* end of date picker styling */
+
 @media (max-width: 768px) {
-    .judul1 {
-        -webkit-text-stroke: 1px #ff3a85;
-        font-size: 25px;
-    }
+  .judul1 {
+    -webkit-text-stroke: 1px #ff3a85;
+    font-size: 25px;
+  }
 
-    .input-title h1 {
-        font-size: 20px;
-    }
+  .input-title h1 {
+    font-size: 20px;
+  }
 
-    .input-title .form-label {
-        font-size: 14px;
-    }
+  .input-title .form-label {
+    font-size: 14px;
+  }
 
-    .input-title .form-control {
-        font-size: 14px;
-    }
+  .input-title .form-control {
+    font-size: 14px;
+  }
 
-    .btn-next,
-    .btn-prev {
-        font-size: 14px;
-        padding: 5px 15px;
-    }
+  .btn-next,
+  .btn-prev {
+    font-size: 14px;
+    padding: 5px 15px;
+  }
 
-    footer {
-        font-size: 12px;
-    }
+  footer {
+    font-size: 12px;
+  }
 }

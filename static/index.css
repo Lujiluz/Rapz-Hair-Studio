@@ -73,6 +73,7 @@ body {
 /* home */
 #section-home {
   padding: 100px 0;
+  width: 100%;
   background-image: url(../static/img/bg-home.svg);
   background-size: cover;
 }
@@ -378,8 +379,6 @@ body {
   border-radius: 15px;
   border: 2px solid white;
 }
-.prev-btn {
-}
 
 /* testimoni */
 #testimoni {
@@ -469,6 +468,7 @@ body {
   padding: 100px 0;
   background: url(../static/img/bg-home.svg);
   background-size: cover;
+  overflow-y: auto;
 }
 
 .text-post {

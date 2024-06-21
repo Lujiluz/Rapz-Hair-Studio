@@ -184,4 +184,62 @@ def add_testimoni():
   
   return jsonify({'result': 'success'})
 
+@api_bp.route('/api/v1/get_services')
+def get_services():
+  data = [
+    {
+    'service_id': 'S001',
+    'service_name': 'Down Perm',
+    'price': '100K',
+    'desc': 'Treatment melemahkan volumen rambut yang terlalu kaku'
+    },
+    {
+    'service_id': 'S002',
+    'service_name': 'Basic Color',
+    'price': '75K',
+    'desc': 'Coloring warna basic (hitam, biru, dark brown)'
+    },
+    {
+    'service_id': 'S003',
+    'service_name': 'Hair Perm',
+    'price': '300K',
+    'desc': 'Mengeritingkan rambut'
+    },
+    {
+    'service_id': 'S004',
+    'service_name': 'Fashion Color (Highlight)',
+    'price': '350K',
+    'desc': 'Abu-abu, silver, dan lain-lain'
+    },
+    {
+    'service_id': 'S005',
+    'service_name': 'Creambath',
+    'price': '75K',
+    'desc': 'Perawatan rambut'
+    },
+    {
+    'service_id': 'S006',
+    'service_name': 'Fashion Color Full',
+    'price': '400K',
+    'desc': 'Warna-warna terang (abu-abu, merah, putih, dll)'
+    },
+    {
+    'service_id': 'S007',
+    'service_name': 'Hair Cut',
+    'price': 'start from 55K',
+    'desc': 'Cukur + keramas + handuk panas + tonic + pomade'
+    },
+    {
+    'service_id': 'S008',
+    'service_name': 'Full Service',
+    'price': 'start from 125K',
+    'desc': 'Hair cut + creambath + blackmask + handuk panas + pijit kepala'
+    },
+    
+  ]
+  return jsonify({
+      'code': 200,
+      'result': 'success',
+      'services': data
+    })
 
