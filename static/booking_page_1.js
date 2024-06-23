@@ -12,12 +12,9 @@ $(document).ready(async function () {
   };
   // function untuk generate userId
   const getUserId = async () => {
-    let id = localStorage.getItem('userId');
-    if (!id) {
-      id = 'user_' + new Date().getTime();
-      hashedId = await hashId(id);
-      localStorage.setItem('userId', hashedId);
-    }
+    id = 'user_' + new Date().getTime();
+    hashedId = await hashId(id);
+    localStorage.setItem('userId', hashedId);
     return id;
   };
 

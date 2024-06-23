@@ -114,7 +114,8 @@ body {
 
 /* button next dan prev */
 .btn-prev,
-.btn-cancel {
+.btn-cancel,
+.btn-next {
   background-color: #cc004e;
   color: var(--putih);
   border: 0;
