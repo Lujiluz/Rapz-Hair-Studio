@@ -3,19 +3,21 @@ $(document).ready(function () {
   $('.card').click(function () {
     $('.card').removeClass('card-is-selected');
     $(this).addClass('card-is-selected');
-    let hairStylistId = $(this).data('hairstylist-id');
-    handleSelectedHairStylist(hairStylistId);
+    let hairStylistName = $('#hairStylistName').text();
+    let hairStylistPrice = $('#hairStylistPrice').text();
+    handleSelectedHairStylist([{ hairStylistName, hairStylistPrice }]);
   });
 });
 
 // function untuk memasukkan data id hairstylist ke localStorage
-const handleSelectedHairStylist = (hairStylistId) => {
+const handleSelectedHairStylist = (selectedHairStylist) => {
   let userData = JSON.parse(localStorage.getItem('userData'));
+  console.log(userData);
   if (!userData) {
     alert('Data kamu gaada nih, silahkan isi data dirimu untuk booking ya~😉');
     return;
   }
 
   // update userData di LS
-  localStorage.setItem('userData', JSON.stringify({ ...userData, hairStylistId }));
+  localStorage.setItem('userData', JSON.stringify({ ...userData, selectedHairStylist }));
 };

@@ -50,7 +50,14 @@ const handleServiceSelected = (serviceId) => {
   //cek apakah serviceId udah ada atau belum. Kalau belum masukin, kalau ada keluarin
   const index = userData.selectedServices.indexOf(serviceId);
   if (index === -1) {
-    userData.selectedServices.push(serviceId);
+    let price = $('#service-price').text();
+    let serviceName = $('#service-title').text();
+    let serviceDetail = {
+      serviceId,
+      price,
+      serviceName,
+    };
+    userData.selectedServices.push(serviceDetail);
   } else {
     userData.selectedServices.splice(index, 1);
   }

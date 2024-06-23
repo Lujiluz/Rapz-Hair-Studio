@@ -39,27 +39,26 @@
           <div class="row">
             <div class="col-md-6 mb-4">
               <div class="card p-3 h-100 px-3 py-3">
-                <p>Name: <span>Your Name</span></p>
-                <p>Phone Number: <span>08xx - xxxx - xxxx</span></p>
-                <p>Email: <span>yourname@gmail.com</span></p>
-                <p>Date: <span>Saturday, 25 May 2024</span></p>
-                <p>Time: <span>10.00 - 13.00</span></p>
+                <p>Name: <span id="name">Your Name</span></p>
+                <p>Phone Number: <span id="waNum">08xx - xxxx - xxxx</span></p>
+                <p>Email: <span id="email">yourname@gmail.com</span></p>
+                <p>Date: <span id="date">Saturday, 25 May 2024</span></p>
+                <p>Time: <span id="time">10.00 - 13.00</span></p>
               </div>
             </div>
             <div class="col-md-6 mb-4">
               <div class="card p-3 h-100">
                 <p>Services</p>
-                <p>Hair Cut <span class="float-end">Rp. 55.000</span></p>
-                <p>Hair Perm <span class="float-end">Rp. 300.000</span></p>
+                <div id="services"></div>
                 <p>Barbers</p>
-                <p>Ravit <span class="float-end">Rp. 75.000</span></p>
+                <div id="barbers"></div>
                 <hr />
-                <p>Amount to pay <span class="float-end">Rp. 430.000</span></p>
+                <p>Amount to pay <span class="float-end" id="totalPay">Rp. -</span></p>
               </div>
             </div>
           </div>
 
-          <!-- Notes Section -->
+          <!-- Notes Section
           <div class="row">
             <div class="col-12">
               <div class="notes">
@@ -67,16 +66,16 @@
                 <textarea class="form-control" id="notes" rows="3" placeholder="Put your notes in here"></textarea>
               </div>
             </div>
-          </div>
+          </div> -->
 
           <!-- button next/prev -->
           <div class="col-mb-3">
-            <div class="d-grid gap-2 d-md-flex justify-content-between">
+            <div class="d-flex justify-content-between">
               <a href="/booking/4">
                 <button class="btn-prev mt-5" type="button">Previous</button>
               </a>
-              <a href="/booking/6">
-                <button class="btn-next mt-5" type="button">Next</button>
+              <a>
+                <button class="btn-next mt-5" type="button" onclick="handleNextBtn()">Next</button>
               </a>
             </div>
           </div>
@@ -92,5 +91,7 @@
 
     <!-- bootstrap -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="{{ url_for('static', filename='booking_page_5.js') }}"></script>
   </body>
 </html>

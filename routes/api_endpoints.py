@@ -226,13 +226,13 @@ def get_services():
     {
     'service_id': 'S007',
     'service_name': 'Hair Cut',
-    'price': 'start from 55K',
+    'price': '55K',
     'desc': 'Cukur + keramas + handuk panas + tonic + pomade'
     },
     {
     'service_id': 'S008',
     'service_name': 'Full Service',
-    'price': 'start from 125K',
+    'price': '125K',
     'desc': 'Hair cut + creambath + blackmask + handuk panas + pijit kepala'
     },
     
@@ -251,3 +251,74 @@ def add_order():
   db.orders.insert_one(booking_data)
   return jsonify({'result': 'success', 'msg': 'Booking kamu berhasil dibuat. Jangan lupa dateng~👌'})
 
+@api_bp.route('/api/v1/get_orders/<hashedUserId>')
+def get_orders(hashedUserId):
+  """API endpoint untuk mendapatkan data orders"""
+  
+  order_data = db.orders.find_one({'userId': hashedUserId}, {'_id': False})
+  order_price = 0
+  barber_price = 0 
+  for order in order_data['selectedServices']:
+    order_price = order_price + int(order['price'][:-1])
+  for barber in order_data['selectedHairStylist']:
+    barber_price = barber_price + int(barber['hairStylistPrice'][:-1])
+  
+  total_pay = order_price + barber_price
+  data = {
+    'email': order_data['email'],
+    'name': order_data['name'],
+    'services_order': order_data['selectedServices'],
+    'barber_order': order_data['selectedHairStylist'],
+    'tanggalBooking': order_data['tanggalBooking'],
+    'waNum': order_data['waNum'],
+    'total_pay': total_pay
+  }
+  
+  db.orders.update_one({'userId': hashedUserId}, {'$set': {'total_pay(K)': total_pay}})
+  return jsonify({'result': 'still testing', 'order_data': data} )
+
+@api_bp.route('/api/v1/cancel_order/<hashedUserId>', methods=['POST'])
+def cancel_order(hashedUserId):
+  """API endpoint untuk handle cancel order
+  """
+  db.orders.update_one({'userId': hashedUserId}, {'$set': {'is_cancel': True}})
+  return jsonify({'result': 'success..', 'msg': 'Pesananmu berhasil dibatalkan! 👌'})
+
+@api_bp.route('/api/v1/pengajuan_cuti')
+def pengajuan_cuti():
+  """api endpoint untuk memasukkan mock data pengajuan cuti. Next akan diubah menjadi api 
+  endpoint handle pengajuan cuti
+  """
+  data = [
+    {
+        "hairStylist_id": "HS001",
+        "tgl_cuti": "2024-07-01",
+        "tgl_masuk": "2024-07-10",
+        "is_approved": None
+    },
+    {
+        "hairStylist_id": "HS002",
+        "tgl_cuti": "2024-07-05",
+        "tgl_masuk": "2024-07-15",
+        "is_approved": None
+    },
+    {
+        "hairStylist_id": "HS003",
+        "tgl_cuti": "2024-07-08",
+        "tgl_masuk": "2024-07-18",
+        "is_approved": None
+    },
+    {
+        "hairStylist_id": "HS004",
+        "tgl_cuti": "2024-07-12",
+        "tgl_masuk": "2024-07-20",
+        "is_approved": None
+    },
+    {
+        "hairStylist_id": "HS005",
+        "tgl_cuti": "2024-07-15",
+        "tgl_masuk": "2024-07-25",
+        "is_approved": None
+    }
+  ]
+  return jsonify({'result': 'success', 'data': data})
