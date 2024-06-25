@@ -79,3 +79,11 @@ const handleButton = (status, userId) => {
     },
   });
 };
+
+// handle logout
+const handleLogout = () => {
+  if (confirm('Yakin mau logout, a?')) {
+    $.removeCookie('token', null, { path: '/admin' });
+    window.location.href = '/admin/login';
+  }
+};

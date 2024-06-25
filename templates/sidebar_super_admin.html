@@ -1,0 +1,52 @@
+<aside id="sidebar" class="js-sidebar">
+  <!-- Content For Sidebar -->
+  <div class="h-100">
+    <div class="sidebar-logo justify-content-center align-items-center text-center">
+      <img src="../static/img/ravit.png" alt="" class="img-fluid" />
+      <h5 class="text-profile mt-4">{{user_data['fullName']}}</h5>
+      <p class="text-profile">{{user_data['email']}}</p>
+    </div>
+    <ul class="sidebar-nav mt-5">
+      <li class="sidebar-header">
+        <a href="/super_admin/dashboard">
+          <span class="icon">
+            <ion-icon name="home"></ion-icon>
+          </span>
+          <span class="title">Dashboard</span>
+        </a>
+      </li>
+      <li class="sidebar-header">
+        <a href="/super_admin/persetujuan_cuti">
+          <span class="icon">
+            <ion-icon name="calendar-clear"></ion-icon>
+          </span>
+          <span class="title">Persetujuan Cuti</span>
+        </a>
+      </li>
+      <li class="sidebar-header">
+        <a href="/super_admin/users">
+          <span class="icon">
+            <ion-icon name="person"></ion-icon>
+          </span>
+          <span class="title">Users</span>
+        </a>
+      </li>
+      <li class="sidebar-header">
+        <a href="/super_admin/testimoni">
+          <span class="icon">
+            <ion-icon name="chatbox"></ion-icon>
+          </span>
+          <span class="title">Testimoni</span>
+        </a>
+      </li>
+      <li class="sidebar-header">
+        <a onclick="handleLogout()" class="text-white">
+          <span class="icon">
+            <ion-icon name="exit"></ion-icon>
+          </span>
+          <span class="title">Logout</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+</aside>

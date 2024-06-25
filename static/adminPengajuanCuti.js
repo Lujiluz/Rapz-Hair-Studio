@@ -22,13 +22,16 @@ document.addEventListener('DOMContentLoaded', function () {
     data: {},
     success: function (res) {
       if (res.dataPengajuan.length > 0) {
+        let pendingStatus = 'bg-primary';
+        let diterimaStatus = 'bg-success';
+        let ditolakStatus = 'bg-danger';
         res.dataPengajuan.map((pengajuan) => {
           let htmlDataPengajuan = `  <tr>
                                       <td>${pengajuan.tglAwal}</td>
                                       <td>${pengajuan.tglAkhir}</td>
                                       <td>${pengajuan.alasanCuti}</td>
                                       <td>
-                                        <div class="bg-primary rounded text-white mx-3 w-auto">
+                                        <div class="${pengajuan.status == 'ditolak' ? ditolakStatus : pengajuan.status == 'pending' ? pendingStatus : diterimaStatus} rounded text-white mx-3 w-auto">
                                           <p class="py-1 px-2" id="status-text">${pengajuan.status}</p>
                                         </div>
                                       </td>
@@ -61,6 +64,9 @@ const handleSubmitPengajuanCuti = () => {
       alasanCuti,
     },
     success: function (res) {
+      document.querySelectorAll('#datetimepickerInput').forEach((date) => {
+        date.value = '';
+      });
       alert(res.msg);
       location.reload();
     },

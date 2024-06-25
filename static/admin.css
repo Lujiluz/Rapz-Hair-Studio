@@ -12,7 +12,7 @@
 }
 
 body {
-  font-family: "Poppins", sans-serif;
+  font-family: 'Poppins', sans-serif;
   font-size: 0.875rem;
   opacity: 1;
   overflow-y: scroll;
@@ -23,7 +23,7 @@ body {
 a {
   cursor: pointer;
   text-decoration: none;
-  font-family: "Poppins", sans-serif;
+  font-family: 'Poppins', sans-serif;
 }
 
 li {
@@ -247,14 +247,14 @@ footer {
 
 /* admin */
 /* pengajuan cuti */
-.item-cuti{
+.item-cuti {
   background-color: #414141;
   color: var(--putih);
   padding: 2rem;
   border-radius: 1rem;
 }
 
-.btn-cuti{
+.btn-cuti {
   background: #ad114c;
   color: var(--putih);
   font-weight: bold;
@@ -263,16 +263,16 @@ footer {
 .text-data-cuti {
   padding: 1.6rem;
 }
-.text-data-cuti .text-1{
+.text-data-cuti .text-1 {
   margin-top: 2rem;
 }
 
-.text-data-cuti p{
+.text-data-cuti p {
   font-size: 18px;
   font-weight: 600;
-} 
+}
 
-.btn-pengajuan{
+.btn-pengajuan {
   color: var(--putih);
   font-weight: bold;
 }
@@ -281,7 +281,7 @@ footer {
   padding: 1rem;
 }
 
-.text-status-cuti p{
+.text-status-cuti p {
   background-color: #d6e4e5;
   color: black;
   font-weight: 600;
@@ -450,10 +450,17 @@ footer {
   color: var(--putih);
   font-weight: 600;
 }
-.btn-collection:hover{
+.btn-collection:hover {
   color: var(--pink);
   background-color: var(--putih);
 }
-.btn-collection{
+.btn-collection {
   margin-top: 3rem;
+}
+
+#preview_img {
+  width: 128px;
+  height: 128px;
+  border-radius: 50%;
+  object-fit: cover;
 }

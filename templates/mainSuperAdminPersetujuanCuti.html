@@ -1,116 +1,69 @@
-{% include 'sidebarSuperAdmin.html' %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
 
-<!-- Card person -->
-<div class="container">
-  <div class="row mt-3">
-    <div class="col-12 col-md-4 d-flex py-1">
-      <div class="col">
-        <div class="item-person d-flex">
-          <div class="item-person-cuti">
-            <div class="name-person-cuti mt-4 text-end">
-              <span>Dede Kusnandar</span>
-            </div>
-            <div class="img-person-cuti">
-              <img src="../static/img/ravit.png" class="img-fluid" alt="" />
-            </div>
-          </div>
+    <!-- style css -->
+    <link rel="stylesheet" href="../static/admin.css" />
 
-          <div class="item-text-cuti mt-3">
-            <h5 class="text-center">Pengajuan Cuti</h5>
-            <div class="item-text-cuti">
-              <ion-icon
-                class="item-text-item"
-                name="calendar-clear-outline"
-              ></ion-icon>
-              <span class="item-text-item">Tanggal Cuti</span>
-              <p class="text-item-text">13 - 16, May 2024</p>
-              <ion-icon name="reader-outline"></ion-icon>
-              <span class="item-text-item">Tindakan</span>
-              <p class="text-item-text">Diterima</p>
-            </div>
-          </div>
+    <!-- fonts awesome -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Lexend:wght@100..900&family=Manrope:wght@200..800&family=Noto+Serif+Display:ital,wght@0,100..900;1,100..900&family=Nunito:wght@300&family=Open+Sans:wght@500&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Sora:wght@100..800&display=swap"
+      rel="stylesheet"
+    />
+    <!-- logo title bar -->
+    <link rel="icon" href="../static/img/logo.svg" type="image/x-icon" />
 
-          <div class="d-grid gap-1 d-flex justify-content-center mt-1 mb-2">
-            <button class="btn-confirm-cuti me-md-2" type="button">
-              Terima
+    <title>Admin</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      <!-- jinja sidebar -->
+      {% with user_data = user_data %} {% include 'sidebar_super_admin.html' %} {% endwith %}
+
+      <div class="main">
+        <div class="container">
+          <nav class="navbar navbar-expand px-3 border-bottom">
+            <button class="btn" id="sidebar-toggle" type="button">
+              <span class="navbar-toggler-icon"></span>
             </button>
-            <button class="btn-cancel-cuti" type="button">Tolak</button>
-          </div>
+
+            <h1>ADMIN RAPZ HAIR STUDIO</h1>
+          </nav>
         </div>
+
+        <main class="content px-1 py-1">
+          <div class="container-fluid">
+            <!-- jinja contain main admin -->
+            {% include 'container_super_admin.html' %}
+
+            <!-- conatiner main persetujuan cuti -->
+            <div class="container">
+              <div class="row mt-3" id="card-container"></div>
+            </div>
+
+            <!-- jinja footer -->
+            {% include 'footer_admin.html' %}
+          </div>
+        </main>
       </div>
     </div>
-    <div class="col-12 col-md-4 d-flex py-1">
-      <div class="col">
-        <div class="item-person d-flex">
-          <div class="item-person-cuti">
-            <div class="name-person-cuti mt-4 text-end">
-              <span>Dede Kusnandar</span>
-            </div>
-            <div class="img-person-cuti">
-              <img src="../static/img/ravit.png" class="img-fluid" alt="" />
-            </div>
-          </div>
 
-          <div class="item-text-cuti mt-3">
-            <h5 class="text-center">Pengajuan Cuti</h5>
-            <div class="item-text-cuti">
-              <ion-icon
-                class="item-text-item"
-                name="calendar-clear-outline"
-              ></ion-icon>
-              <span class="item-text-item">Tanggal Cuti</span>
-              <p class="text-item-text">13 - 16, May 2024</p>
-              <ion-icon name="reader-outline"></ion-icon>
-              <span class="item-text-item">Tindakan</span>
-              <p class="text-item-text">Diterima</p>
-            </div>
-          </div>
+    <!-- js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js"></script>
+    <script src="{{ url_for('static', filename='superadmin_persetujuan_cuti.js') }}"></script>
 
-          <div class="d-grid gap-1 d-flex justify-content-center mt-1 mb-2">
-            <button class="btn-confirm-cuti me-md-2" type="button">
-              Terima
-            </button>
-            <button class="btn-cancel-cuti" type="button">Tolak</button>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="col-12 col-md-4 d-flex py-1">
-      <div class="col">
-        <div class="item-person d-flex">
-          <div class="item-person-cuti">
-            <div class="name-person-cuti mt-4 text-end">
-              <span>Dede Kusnandar</span>
-            </div>
-            <div class="img-person-cuti">
-              <img src="../static/img/ravit.png" class="img-fluid" alt="" />
-            </div>
-          </div>
+    <!-- Bootstrap Bundle with Popper -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
 
-          <div class="item-text-cuti mt-3">
-            <h5 class="text-center">Pengajuan Cuti</h5>
-            <div class="item-text-cuti">
-              <ion-icon
-                class="item-text-item"
-                name="calendar-clear-outline"
-              ></ion-icon>
-              <span class="item-text-item">Tanggal Cuti</span>
-              <p class="text-item-text">13 - 16, May 2024</p>
-              <ion-icon name="reader-outline"></ion-icon>
-              <span class="item-text-item">Tindakan</span>
-              <p class="text-item-text">Diterima</p>
-            </div>
-          </div>
-
-          <div class="d-grid gap-1 d-flex justify-content-center mt-1 mb-2">
-            <button class="btn-confirm-cuti me-md-2" type="button">
-              Terima
-            </button>
-            <button class="btn-cancel-cuti" type="button">Tolak</button>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-{% include 'footerAdmin.html' %}
+    <!-- ionicons -->
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+  </body>
+</html>

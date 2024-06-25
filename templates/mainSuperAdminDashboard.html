@@ -1,59 +1,91 @@
-{% include 'sidebarSuperAdmin.html' %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
 
-<!-- Table data -->
-<div class="container">
-  <div class="card card-table border-0 mt-5">
-    <div class="card-header">
-      <h3 class="card-title">Order History</h3>
-      <h5 class="card-subtitle">
-        <ion-icon name="calendar-number"></ion-icon>
-        <span>Chose Date</span>
-      </h5>
-    </div>
-    <div class="container">
-      <table class="table custom-table">
-        <thead>
-          <tr>
-            <th scope="col">No</th>
-            <th scope="col">Name</th>
-            <th scope="col">Date</th>
-            <th scope="col">Orders</th>
-            <th scope="col">Status</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <th scope="row">1</th>
-            <td>Ahsan Sarasvati</td>
-            <td>Sat, 30 May 2024</td>
-            <td>Hair cut, Perm</td>
-            <td>Finished</td>
-          </tr>
-          <tr>
-            <th scope="row">2</th>
-            <td>Ahsan Sarasvati</td>
-            <td>Sat, 30 May 2024</td>
-            <td>Hair cut, Perm</td>
-            <td>Finished</td>
-          </tr>
-          <tr>
-            <th scope="row">3</th>
-            <td>Ahsan Sarasvati</td>
-            <td>Sat, 30 May 2024</td>
-            <td>Hair cut, Perm</td>
-            <td>Unfinished</td>
-          </tr>
-          <tr>
-            <th scope="row">4</th>
-            <td>Ahsan Sarasvati</td>
-            <td>Sat, 30 May 2024</td>
-            <td>Hair cut, Perm</td>
-            <td>Finished</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  </div>
-</div>
+    <!-- style css -->
+    <link rel="stylesheet" href="../static/admin.css" />
 
-{% include 'footerAdmin.html' %}
+    <!-- fonts awesome -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Lexend:wght@100..900&family=Manrope:wght@200..800&family=Noto+Serif+Display:ital,wght@0,100..900;1,100..900&family=Nunito:wght@300&family=Open+Sans:wght@500&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Sora:wght@100..800&display=swap"
+      rel="stylesheet"
+    />
+    <!-- logo title bar -->
+    <link rel="icon" href="../static/img/logo.svg" type="image/x-icon" />
+
+    <title>Admin</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      <!-- jinja sidebar -->
+      {% with user_data = user_data %} {% include 'sidebar_super_admin.html' %} {% endwith %}
+
+      <div class="main">
+        <div class="container">
+          <nav class="navbar navbar-expand px-3 border-bottom">
+            <button class="btn" id="sidebar-toggle" type="button">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <h1>ADMIN RAPZ HAIR STUDIO</h1>
+          </nav>
+        </div>
+
+        <main class="content px-1 py-1">
+          <div class="container-fluid">
+            <!-- jinja contain main admin -->
+            {% include 'container_super_admin.html' %}
+
+            <!-- main container Table data -->
+            <div class="container">
+              <div class="card card-table border-0 mt-5">
+                <div class="card-header">
+                  <h3 class="card-title">Order History</h3>
+                  <h5 class="card-subtitle">
+                    <ion-icon name="calendar-number"></ion-icon>
+                    <span>Chose Date</span>
+                  </h5>
+                </div>
+                <div class="container">
+                  <table class="table custom-table">
+                    <thead>
+                      <tr>
+                        <th scope="col">No</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Date</th>
+                        <th scope="col">Orders</th>
+                        <th scope="col">Status</th>
+                      </tr>
+                    </thead>
+                    <tbody id="table-body"></tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+
+            <!-- jinja footer -->
+            {% include 'footer_admin.html' %}
+          </div>
+        </main>
+      </div>
+    </div>
+
+    <!-- js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js"></script>
+    <script src="{{ url_for('static', filename='superadmin.js') }}"></script>
+
+    <!-- Bootstrap Bundle with Popper -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+
+    <!-- ionicons -->
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+  </body>
+</html>

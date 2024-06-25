@@ -109,7 +109,7 @@ def get_user():
     data = list(db.users.find({'role': role}, {"_id": False}))
     return jsonify({'result': 'success', 'users': data})
   
-  data = list(db.users.find({}, {'_id': False}))
+  data = list(db.users.find({}, {'_id': False, 'password': False}))
   return jsonify({'result': 'success', 'users': data})
 
 @api_bp.route('/api/v1/add_user', methods=['GET', 'POST'])
@@ -143,12 +143,13 @@ def add_user():
               'wa_num': waNum,
               'price_per_service': pricePerService,
               'role': role,
-              'is_cuti': False,
+              'status': 'aktif',
           }
       
       db.users.insert_one(data)
       return jsonify({
-          'result': 'success'
+          'result': 'success',
+          'msg': 'User baru berhasil ditambahkan, a~👌'
           })
     return render_template('newUser.html')
 
@@ -176,7 +177,8 @@ def add_testimoni():
   data = {
     'name': name,
     'rating': rating,
-    'review': review
+    'review': review,
+    'is_show': False
   }
   
   db.testimoni.insert_one(data)
@@ -281,7 +283,7 @@ def get_orders(hashedUserId):
 def cancel_order(hashedUserId):
   """API endpoint untuk handle cancel order
   """
-  db.orders.update_one({'userId': hashedUserId}, {'$set': {'is_cancel': True}})
+  db.orders.update_one({'userId': hashedUserId}, {'$set': {'status': 'Cancel'}})
   return jsonify({'result': 'success..', 'msg': 'Pesananmu berhasil dibatalkan! 👌'})
 
 # api endpoint untuk dashboard admin
@@ -316,13 +318,15 @@ def pengajuan_cuti():
   tglAwal = request.form['tglAwal']
   tglAkhir = request.form['tglAkhir']
   alasanCuti = request.form['alasanCuti']
+  profile_img = db.users.find_one({'fullName': nama}, {'_id': 0, 'profile_img': 1})
 
   data = {
     'nama': nama,
     'tglAwal': tglAwal,
     'tglAkhir': tglAkhir,
     'alasanCuti': alasanCuti,
-    'status': 'pending'
+    'status': 'pending',
+    'profile_img': profile_img['profile_img']
   }
   
   db.pengajuan_cuti.insert_one(data)
@@ -334,42 +338,20 @@ def data_pengajuan_cuti():
   data_pengajuan = list(db.pengajuan_cuti.find({'nama': nama}, {'_id': False}))
   return jsonify({'result': 'success', 'dataPengajuan': data_pengajuan}), 200
 
-# akhir api endpoint untuk dashboard admin
-# @api_bp.route('/api/v1/pengajuan_cuti')
-# def pengajuan_cuti():
-#   """api endpoint untuk memasukkan mock data pengajuan cuti. Next akan diubah menjadi api 
-#   endpoint handle pengajuan cuti
-#   """
-#   data = [
-#     {
-#         "hairStylist_id": "HS001",
-#         "tgl_cuti": "2024-07-01",
-#         "tgl_masuk": "2024-07-10",
-#         "is_approved": None
-#     },
-#     {
-#         "hairStylist_id": "HS002",
-#         "tgl_cuti": "2024-07-05",
-#         "tgl_masuk": "2024-07-15",
-#         "is_approved": None
-#     },
-#     {
-#         "hairStylist_id": "HS003",
-#         "tgl_cuti": "2024-07-08",
-#         "tgl_masuk": "2024-07-18",
-#         "is_approved": None
-#     },
-#     {
-#         "hairStylist_id": "HS004",
-#         "tgl_cuti": "2024-07-12",
-#         "tgl_masuk": "2024-07-20",
-#         "is_approved": None
-#     },
-#     {
-#         "hairStylist_id": "HS005",
-#         "tgl_cuti": "2024-07-15",
-#         "tgl_masuk": "2024-07-25",
-#         "is_approved": None
-#     }
-#   ]
-#   return jsonify({'result': 'success', 'data': data})
+# API endpoint superadmin
+@api_bp.route('/api/v1/get_all_orders', methods=['GET'])
+def get_all_orders():
+  orders = list(db.orders.find({}, {'_id': False}))
+  return jsonify({'result': 'success', 'orders': orders})
+
+@api_bp.route('/api/v1/persetujuan_cuti', methods=['GET', 'POST'])
+def persetujuan_cuti () :
+  if request.method == 'POST':
+    nama = request.form['nama']
+    action = request.form['action']
+    db.pengajuan_cuti.update_one({'nama': nama, 'status': 'pending'}, {'$set': {'status': action}})
+    return jsonify({'result': 'successfully updated', 'msg': f'pengajuan cuti ini berhasil {action}~👌'}), 200
+  
+  data = list(db.pengajuan_cuti.find({}, {'_id': False}))
+  return jsonify({'result': 'success', 'data': data}), 200
+# end of API endpoint superadmin

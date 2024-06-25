@@ -1,0 +1,46 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12 col-md-4 d-flex py-1">
+      <div class="col">
+        <div class="item d-flex justify-content-center align-items-center text-center">
+          <div class="text-number">
+            <p>Total Pegawai</p>
+            <hr class="custom-hr" />
+            <p class="text-2"><span>{{orders_data['total_pegawai']}}</span> orang</p>
+          </div>
+          <div class="icon-item">
+            <ion-icon name="cut"></ion-icon>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-12 col-md-4 d-flex py-1">
+      <div class="col">
+        <div class="item d-flex justify-content-center align-items-center text-center">
+          <div class="text-number">
+            <p>Total Orders</p>
+            <hr class="custom-hr" />
+            <p class="text-2"><span>{{orders_data['all_orders']}}</span> orang</p>
+          </div>
+          <div class="icon-item">
+            <ion-icon name="cart"></ion-icon>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-12 col-md-4 d-flex py-1">
+      <div class="col">
+        <div class="item d-flex justify-content-center align-items-center text-center">
+          <div class="text-number">
+            <p>Cancel</p>
+            <hr class="custom-hr" />
+            <p class="text-2"><span>{{orders_data['cancel_orders']}}</span> orang</p>
+          </div>
+          <div class="icon-item">
+            <ion-icon name="close"></ion-icon>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

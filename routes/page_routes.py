@@ -100,23 +100,133 @@ def admin_pengajuan_cuti():
 # routes super admin
 @web_bp.route('/super_admin/dashboard',methods=['GET','POST'])
 def super_admin_dashboard():
-    return render_template('mainSuperAdminDashboard.html')
+    token = request.cookies.get('token')
+    try:
+        payload = jwt.decode(token, SECRET_KEY, algorithms=['HS256'])
+        user_data = db.users.find_one({'fullName': payload['id']}, {'_id': False, 'pw': False})
+
+        # ambil data jumlah order berdasarkan user yang login
+        query_orders_cancel = {'status': 'Cancel'}
+        query_total_pegawai = {'role': 'admin'}
+        all_orders = db.orders.count_documents({})
+        cancel_orders = db.orders.count_documents(query_orders_cancel)
+        total_pegawai = db.users.count_documents(query_total_pegawai)
+        orders_data = {
+            'all_orders': all_orders,
+            'cancel_orders': cancel_orders,
+            'total_pegawai': total_pegawai
+        }
+
+        return render_template('mainSuperAdminDashboard.html', user_data = user_data, orders_data = orders_data)
+    except jwt.ExpiredSignatureError:
+        return redirect(url_for('web.role_choose', msg='Login kamu udah kadaluwarsa, tolong login ulang yaa 🙏'))
+    except jwt.exceptions.DecodeError:
+        return redirect(url_for('web.role_choose', msg='Maaf banget, sistem bermasalah pas kamu coba login. Tolong login ulang yaa 🙏'))
+
 
 @web_bp.route('/super_admin/persetujuan_cuti')
 def super_admin_persetujuan_cuti():
-    return render_template('mainSuperAdminPersetujuanCuti.html')
+    token = request.cookies.get('token')
+    try:
+        payload = jwt.decode(token, SECRET_KEY, algorithms=['HS256'])
+        user_data = db.users.find_one({'fullName': payload['id']}, {'_id': False, 'pw': False})
+
+        # ambil data jumlah order berdasarkan user yang login
+        query_orders_cancel = {'status': 'Cancel'}
+        query_total_pegawai = {'role': 'admin'}
+        all_orders = db.orders.count_documents({})
+        cancel_orders = db.orders.count_documents(query_orders_cancel)
+        total_pegawai = db.users.count_documents(query_total_pegawai)
+        orders_data = {
+            'all_orders': all_orders,
+            'cancel_orders': cancel_orders,
+            'total_pegawai': total_pegawai
+        }
+
+        return render_template('mainSuperAdminPersetujuanCuti.html', user_data = user_data, orders_data = orders_data)
+    except jwt.ExpiredSignatureError:
+        return redirect(url_for('web.role_choose', msg='Login kamu udah kadaluwarsa, tolong login ulang yaa 🙏'))
+    except jwt.exceptions.DecodeError:
+        return redirect(url_for('web.role_choose', msg='Maaf banget, sistem bermasalah pas kamu coba login. Tolong login ulang yaa 🙏'))
+
 
 @web_bp.route('/super_admin/users')
 def super_admin_users():
-    return render_template('mainSuperAdminUsers.html')
+    token = request.cookies.get('token')
+    try:
+        payload = jwt.decode(token, SECRET_KEY, algorithms=['HS256'])
+        user_data = db.users.find_one({'fullName': payload['id']}, {'_id': False, 'pw': False})
+
+        # ambil data jumlah order berdasarkan user yang login
+        query_orders_cancel = {'status': 'Cancel'}
+        query_total_pegawai = {'role': 'admin'}
+        all_orders = db.orders.count_documents({})
+        cancel_orders = db.orders.count_documents(query_orders_cancel)
+        total_pegawai = db.users.count_documents(query_total_pegawai)
+        orders_data = {
+            'all_orders': all_orders,
+            'cancel_orders': cancel_orders,
+            'total_pegawai': total_pegawai
+        }
+
+        return render_template('mainSuperAdminUsers.html', user_data = user_data, orders_data = orders_data)
+    except jwt.ExpiredSignatureError:
+        return redirect(url_for('web.role_choose', msg='Login kamu udah kadaluwarsa, tolong login ulang yaa 🙏'))
+    except jwt.exceptions.DecodeError:
+        return redirect(url_for('web.role_choose', msg='Maaf banget, sistem bermasalah pas kamu coba login. Tolong login ulang yaa 🙏'))
+
 
 @web_bp.route('/super_admin/add_users')
 def super_admin_add_users():
-    return render_template('mainSuperAdminAddUser.html')
+    token = request.cookies.get('token')
+    try:
+        payload = jwt.decode(token, SECRET_KEY, algorithms=['HS256'])
+        user_data = db.users.find_one({'fullName': payload['id']}, {'_id': False, 'pw': False})
+
+        # ambil data jumlah order berdasarkan user yang login
+        query_orders_cancel = {'status': 'Cancel'}
+        query_total_pegawai = {'role': 'admin'}
+        all_orders = db.orders.count_documents({})
+        cancel_orders = db.orders.count_documents(query_orders_cancel)
+        total_pegawai = db.users.count_documents(query_total_pegawai)
+        orders_data = {
+            'all_orders': all_orders,
+            'cancel_orders': cancel_orders,
+            'total_pegawai': total_pegawai
+        }
+
+        return render_template('mainSuperAdminAddUser.html', user_data = user_data, orders_data = orders_data)
+    except jwt.ExpiredSignatureError:
+        return redirect(url_for('web.role_choose', msg='Login kamu udah kadaluwarsa, tolong login ulang yaa 🙏'))
+    except jwt.exceptions.DecodeError:
+        return redirect(url_for('web.role_choose', msg='Maaf banget, sistem bermasalah pas kamu coba login. Tolong login ulang yaa 🙏'))
+
 
 @web_bp.route('/super_admin/testimoni')
 def super_admin_testimoni():
-    return render_template('mainSuperAdminTestimoni.html')
+    token = request.cookies.get('token')
+    try:
+        payload = jwt.decode(token, SECRET_KEY, algorithms=['HS256'])
+        user_data = db.users.find_one({'fullName': payload['id']}, {'_id': False, 'pw': False})
+
+        # ambil data jumlah order berdasarkan user yang login
+        query_orders_cancel = {'status': 'Cancel'}
+        query_total_pegawai = {'role': 'admin'}
+        all_orders = db.orders.count_documents({})
+        cancel_orders = db.orders.count_documents(query_orders_cancel)
+        total_pegawai = db.users.count_documents(query_total_pegawai)
+        orders_data = {
+            'all_orders': all_orders,
+            'cancel_orders': cancel_orders,
+            'total_pegawai': total_pegawai
+        }
+
+        return render_template('mainSuperAdminTestimoni.html', user_data = user_data, orders_data = orders_data)
+    except jwt.ExpiredSignatureError:
+        return redirect(url_for('web.role_choose', msg='Login kamu udah kadaluwarsa, tolong login ulang yaa 🙏'))
+    except jwt.exceptions.DecodeError:
+        return redirect(url_for('web.role_choose', msg='Maaf banget, sistem bermasalah pas kamu coba login. Tolong login ulang yaa 🙏'))
+
 
 @web_bp.route('/booking')
 def booking_page():
