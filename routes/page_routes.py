@@ -1,6 +1,23 @@
-from flask import Blueprint, render_template
+from flask import Blueprint, render_template, request, redirect, url_for, jsonify
+from dotenv import load_dotenv
+import os
+from os.path import join, dirname
+from pymongo import MongoClient
+import jwt
+from datetime import datetime, timedelta
+import hashlib
 
 web_bp = Blueprint('web', __name__)
+
+dotenv = join(dirname(__file__), '.env')
+load_dotenv(dotenv)
+
+SECRET_KEY = os.environ.get('SECRET_KEY')
+MONGO_URL = os.environ.get('MONGO_URL')
+DB_NAME = os.environ.get('DB_NAME')
+
+client = MongoClient(MONGO_URL)
+db = client[DB_NAME]
 
 @web_bp.route('/', methods=['GET'])
 def home():
@@ -26,33 +43,78 @@ def faq():
     return render_template('faq.html')
 
 # routes admin
-@web_bp.route('/admin',methods=['GET','POST'])
+@web_bp.route('/admin/dashboard',methods=['GET','POST'])
 def admin_booking():
-    return render_template('mainAdminBooking.html')
+    token = request.cookies.get('token')
+    try:
+        payload = jwt.decode(token, SECRET_KEY, algorithms=['HS256'])
+        user_data = db.users.find_one({'fullName': payload['id']}, {'_id': False, 'pw': False})
+        print(user_data)
+
+        # ambil data jumlah order berdasarkan user yang login
+        query_all_orders =  {'selectedHairStylist.hairStylistName': payload['id'].lower()}
+        query_orders_done = {'selectedHairStylist.hairStylistName': payload['id'].lower(), 'status': 'Done'}
+        query_orders_cancel = {'selectedHairStylist.hairStylistName': payload['id'].lower(), 'status': 'Cancel'}
+        all_orders = db.orders.count_documents(query_all_orders)
+        done_orders = db.orders.count_documents(query_orders_done)
+        cancel_orders = db.orders.count_documents(query_orders_cancel)
+        orders_data = {
+            'all_orders': all_orders,
+            'done_orders': done_orders,
+            'cancel_orders': cancel_orders
+        }
+        return render_template('mainAdminBooking.html', user_data = user_data, orders_data = orders_data)
+    except jwt.ExpiredSignatureError:
+        return redirect(url_for('web.role_choose', msg='Login kamu udah kadaluwarsa, tolong login ulang yaa 🙏'))
+    except jwt.exceptions.DecodeError:
+        return redirect(url_for('web.role_choose', msg='Maaf banget, sistem bermasalah pas kamu coba login. Tolong login ulang yaa 🙏'))
 
 @web_bp.route('/admin/pengajuan_cuti',methods=['GET','POST'])
 def admin_pengajuan_cuti():
+    token = request.cookies.get('token')
+    try:
+        payload = jwt.decode(token, SECRET_KEY, algorithms=['HS256'])
+        user_data = db.users.find_one({'fullName': payload['id']}, {'_id': False, 'pw': False})
+        print(user_data)
+
+        # ambil data jumlah order berdasarkan user yang login
+        query_all_orders =  {'selectedHairStylist.hairStylistName': payload['id'].lower()}
+        query_orders_done = {'selectedHairStylist.hairStylistName': payload['id'].lower(), 'status': 'Done'}
+        query_orders_cancel = {'selectedHairStylist.hairStylistName': payload['id'].lower(), 'status': 'Cancel'}
+        all_orders = db.orders.count_documents(query_all_orders)
+        done_orders = db.orders.count_documents(query_orders_done)
+        cancel_orders = db.orders.count_documents(query_orders_cancel)
+        orders_data = {
+            'all_orders': all_orders,
+            'done_orders': done_orders,
+            'cancel_orders': cancel_orders
+        }
+        return render_template('mainAdminPengajuanCuti.html', user_data = user_data, orders_data = orders_data)
+    except jwt.ExpiredSignatureError:
+        return redirect(url_for('web.role_choose', msg='Login kamu udah kadaluwarsa, tolong login ulang yaa 🙏'))
+    except jwt.exceptions.DecodeError:
+        return redirect(url_for('web.role_choose', msg='Maaf banget, sistem bermasalah pas kamu coba login. Tolong login ulang yaa 🙏'))
     return render_template('mainAdminPengajuanCuti.html')
 
 
 # routes super admin
-@web_bp.route('/superadmin/dashboard',methods=['GET','POST'])
+@web_bp.route('/super_admin/dashboard',methods=['GET','POST'])
 def super_admin_dashboard():
     return render_template('mainSuperAdminDashboard.html')
 
-@web_bp.route('/superadmin/persetujuan_cuti')
+@web_bp.route('/super_admin/persetujuan_cuti')
 def super_admin_persetujuan_cuti():
     return render_template('mainSuperAdminPersetujuanCuti.html')
 
-@web_bp.route('/superadmin/users')
+@web_bp.route('/super_admin/users')
 def super_admin_users():
     return render_template('mainSuperAdminUsers.html')
 
-@web_bp.route('/superadmin/add_users')
+@web_bp.route('/super_admin/add_users')
 def super_admin_add_users():
     return render_template('mainSuperAdminAddUser.html')
 
-@web_bp.route('/superadmin/testimoni')
+@web_bp.route('/super_admin/testimoni')
 def super_admin_testimoni():
     return render_template('mainSuperAdminTestimoni.html')
 
@@ -69,7 +131,8 @@ def booking_form_page(pagenum):
 def pengajuan_cuti_page():
     return render_template('mainAdminPengajuanCuti.html')
 # page routing super admin dashboard
-    """
+
+"""
 @app.route('/Persetujuan_cuti',methods=['GET','POST'])
 def persetujuan():
     return render_template('mainSuperAdminPersetujuanCuti.html')
@@ -87,11 +150,12 @@ def testimoni():
 def admin():
     return render_template('mainAdminBooking.html')
 
-@app.route('/addUser',methods=['GET','POST'])
-def addUser():
-    return render_template('mainSuperAdminAddUser.html')
+"""
 
-@app.route('/add_user')
+# @web_bp.route('/addUser',methods=['GET','POST'])
+# def addUser():
+#     return render_template('mainSuperAdminAddUser.html')
+
+@web_bp.route('/add_user')
 def admin_login():
     return render_template('newUser.html')
-    """

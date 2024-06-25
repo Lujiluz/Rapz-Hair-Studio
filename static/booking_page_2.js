@@ -19,7 +19,7 @@ $(document).ready(function () {
                     </span>
                   </div>
                   <p class="card-text" id="service-desc">${service.desc}</p>
-                  <button class="service-button btn btn-sm position-absolute bottom-0 end-0 mt-2 mb-3 me-3" data-service-id="${service.service_id}">
+                  <button class="service-button btn btn-sm position-absolute bottom-0 end-0 mt-2 mb-3 me-3" data-service-id="${service.service_id}" data-service-name="${service.service_name}" data-service-price="${service.price}">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus-lg" viewBox="0 0 16 16">
                       <path fill-rule="evenodd" d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2" />
                     </svg>
@@ -35,7 +35,7 @@ $(document).ready(function () {
 });
 
 // handler function untuk memasukkan ID service ke LS
-const handleServiceSelected = (serviceId) => {
+const handleServiceSelected = (serviceId, serviceName, price) => {
   let userData = JSON.parse(localStorage.getItem('userData'));
   if (!userData) {
     alert('Data kamu gaada nih, silahkan isi data dirimu untuk booking ya~😉');
@@ -48,10 +48,8 @@ const handleServiceSelected = (serviceId) => {
   }
 
   //cek apakah serviceId udah ada atau belum. Kalau belum masukin, kalau ada keluarin
-  const index = userData.selectedServices.indexOf(serviceId);
+  const index = userData.selectedServices.findIndex((service) => service.serviceId == serviceId);
   if (index === -1) {
-    let price = $('#service-price').text();
-    let serviceName = $('#service-title').text();
     let serviceDetail = {
       serviceId,
       price,
@@ -69,7 +67,9 @@ const handleServiceSelected = (serviceId) => {
 
 $('#card-container').on('click', '.service-button', function () {
   const serviceId = $(this).data('service-id');
-  handleServiceSelected(serviceId);
+  const serviceName = $(this).data('service-name');
+  const servicePrice = $(this).data('service-price');
+  handleServiceSelected(serviceId, serviceName, servicePrice);
 
   // update icon dari button berdasarkan state button
   let xIcon = ` <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16">

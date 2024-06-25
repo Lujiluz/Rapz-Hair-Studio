@@ -12,7 +12,7 @@ const handleLogin = (role) => {
     }),
     success: function (res) {
       if (res.code == 200) {
-        $.cookie('token', res.token, { path: `/${res.role}/dashboard` });
+        $.cookie('token', res.token, { path: `/${res.role}` });
         alert('Berhasil login, a!');
         window.location.href = `/${res.role}/dashboard`;
       } else if (res.code == 401) {

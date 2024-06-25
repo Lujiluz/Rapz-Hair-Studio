@@ -1,20 +1,20 @@
 $(document).ready(function () {
   //nyoba buat bikin settingan supaya tanggal tertentu gabisa dipilih (ceritanya udah dibooking)
-  const startDate = new Date('2024-06-20');
-  const dates = [];
+  // const startDate = new Date('2024-06-20');
+  // const dates = [];
 
-  for (let i = 0; i < 20; i++) {
-    const currentDate = new Date(startDate);
-    currentDate.setDate(startDate.getDate() + i);
-    const formattedDate = `${currentDate.getMonth() + 1}/${currentDate.getDate()}/${currentDate.getFullYear()}`;
-    dates.push(formattedDate);
-  }
+  // for (let i = 0; i < 20; i++) {
+  //   const currentDate = new Date(startDate);
+  //   currentDate.setDate(startDate.getDate() + i);
+  //   const formattedDate = `${currentDate.getMonth() + 1}/${currentDate.getDate()}/${currentDate.getFullYear()}`;
+  //   dates.push(formattedDate);
+  // }
 
   $('#datepicker').datepicker({
     format: 'mm/dd/yyyy',
     todayHighlight: true,
     autoclose: true,
-    datesDisabled: dates,
+    // datesDisabled: dates,
   });
 
   // handle tanggal dan waktu booking
@@ -49,7 +49,6 @@ $(document).ready(function () {
         contentType: 'application/json',
         data: JSON.stringify(userData),
         success: function (res) {
-          alert(res.msg);
           window.location.href = '/booking/5';
         },
       });

@@ -13,7 +13,8 @@ $(document).ready(function () {
       $('#waNum').text(res.order_data.waNum);
       $('#email').text(res.order_data.email);
       let [date, time] = res.order_data.tanggalBooking.split(' ');
-      let bookingDate = new Date(date);
+      let [day, month, year] = date.split('/');
+      let bookingDate = new Date(`${year}-${month}-${day}`);
       let formattedBookingDate = bookingDate.toLocaleString('en-GB', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
       let [hours, minutes] = time.split(':');
       let formattedBookingTime = `${hours}.${minutes} WIB`;

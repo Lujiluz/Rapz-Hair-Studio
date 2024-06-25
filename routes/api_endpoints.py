@@ -42,7 +42,6 @@ def admin_login():
       'password': hashed_pw,
       'role': role
     })
-    # print(isUser)
     if isUser:
       payload = {
         'id': username,
@@ -271,7 +270,8 @@ def get_orders(hashedUserId):
     'barber_order': order_data['selectedHairStylist'],
     'tanggalBooking': order_data['tanggalBooking'],
     'waNum': order_data['waNum'],
-    'total_pay': total_pay
+    'total_pay': total_pay,
+    'status': 'pending'
   }
   
   db.orders.update_one({'userId': hashedUserId}, {'$set': {'total_pay(K)': total_pay}})
@@ -284,41 +284,92 @@ def cancel_order(hashedUserId):
   db.orders.update_one({'userId': hashedUserId}, {'$set': {'is_cancel': True}})
   return jsonify({'result': 'success..', 'msg': 'Pesananmu berhasil dibatalkan! 👌'})
 
-@api_bp.route('/api/v1/pengajuan_cuti')
+# api endpoint untuk dashboard admin
+@api_bp.route('/api/v1/get_order_by_admin', methods=['GET'])
+def get_order_by_admin():
+  hair_stylist_name = request.args.get('hairStylistName')
+  if not hair_stylist_name:
+    return jsonify({'result': 'error', 'msg': 'hairStylistName parameter is required.'}), 400
+  
+  query =  {'selectedHairStylist.hairStylistName': hair_stylist_name}
+  orders = list(db.orders.find(query, {'_id': False}))
+  return jsonify({'result': 'success', 'msg': 'testing', 'orders': orders})
+
+@api_bp.route('/api/v1/order_done', methods=['POST'])
+def confirm_oder():
+  """"API endpoint for confirming order"""
+  hashedUserId = request.form['userId']
+  db.orders.update_one({'userId': hashedUserId}, {'$set': {'status': 'Done'}})
+  return jsonify({'result': 'success', 'msg': 'Orderan yang ini kelar a, alhamdulillah~🙏'})
+
+@api_bp.route('/api/v1/order_cancel', methods=['POST'])
+def cancel_oder():
+  """"API endpoint for confirming order"""
+  hashedUserId = request.form['userId']
+  db.orders.update_one({'userId': hashedUserId}, {'$set': {'status': 'Cancel'}})
+  return jsonify({'result': 'success', 'msg': 'Orderan yang ini dibatalkan a, aman ajaa~👌'})
+
+@api_bp.route('/api/v1/pengajuan_cuti', methods=['POST'])
 def pengajuan_cuti():
-  """api endpoint untuk memasukkan mock data pengajuan cuti. Next akan diubah menjadi api 
-  endpoint handle pengajuan cuti
-  """
-  data = [
-    {
-        "hairStylist_id": "HS001",
-        "tgl_cuti": "2024-07-01",
-        "tgl_masuk": "2024-07-10",
-        "is_approved": None
-    },
-    {
-        "hairStylist_id": "HS002",
-        "tgl_cuti": "2024-07-05",
-        "tgl_masuk": "2024-07-15",
-        "is_approved": None
-    },
-    {
-        "hairStylist_id": "HS003",
-        "tgl_cuti": "2024-07-08",
-        "tgl_masuk": "2024-07-18",
-        "is_approved": None
-    },
-    {
-        "hairStylist_id": "HS004",
-        "tgl_cuti": "2024-07-12",
-        "tgl_masuk": "2024-07-20",
-        "is_approved": None
-    },
-    {
-        "hairStylist_id": "HS005",
-        "tgl_cuti": "2024-07-15",
-        "tgl_masuk": "2024-07-25",
-        "is_approved": None
-    }
-  ]
-  return jsonify({'result': 'success', 'data': data})
+  nama = request.form['nama']
+  print(nama)
+  tglAwal = request.form['tglAwal']
+  tglAkhir = request.form['tglAkhir']
+  alasanCuti = request.form['alasanCuti']
+
+  data = {
+    'nama': nama,
+    'tglAwal': tglAwal,
+    'tglAkhir': tglAkhir,
+    'alasanCuti': alasanCuti,
+    'status': 'pending'
+  }
+  
+  db.pengajuan_cuti.insert_one(data)
+  return jsonify({'result': 'success', 'msg': 'permohonan cutimu berhasil diajukan, a~👌', 'statusCuti': 'pending'}), 200
+
+@api_bp.route('/api/v1/data_pengajuan_cuti', methods=['GET'])
+def data_pengajuan_cuti():
+  nama = request.args.get('nama')
+  data_pengajuan = list(db.pengajuan_cuti.find({'nama': nama}, {'_id': False}))
+  return jsonify({'result': 'success', 'dataPengajuan': data_pengajuan}), 200
+
+# akhir api endpoint untuk dashboard admin
+# @api_bp.route('/api/v1/pengajuan_cuti')
+# def pengajuan_cuti():
+#   """api endpoint untuk memasukkan mock data pengajuan cuti. Next akan diubah menjadi api 
+#   endpoint handle pengajuan cuti
+#   """
+#   data = [
+#     {
+#         "hairStylist_id": "HS001",
+#         "tgl_cuti": "2024-07-01",
+#         "tgl_masuk": "2024-07-10",
+#         "is_approved": None
+#     },
+#     {
+#         "hairStylist_id": "HS002",
+#         "tgl_cuti": "2024-07-05",
+#         "tgl_masuk": "2024-07-15",
+#         "is_approved": None
+#     },
+#     {
+#         "hairStylist_id": "HS003",
+#         "tgl_cuti": "2024-07-08",
+#         "tgl_masuk": "2024-07-18",
+#         "is_approved": None
+#     },
+#     {
+#         "hairStylist_id": "HS004",
+#         "tgl_cuti": "2024-07-12",
+#         "tgl_masuk": "2024-07-20",
+#         "is_approved": None
+#     },
+#     {
+#         "hairStylist_id": "HS005",
+#         "tgl_cuti": "2024-07-15",
+#         "tgl_masuk": "2024-07-25",
+#         "is_approved": None
+#     }
+#   ]
+#   return jsonify({'result': 'success', 'data': data})

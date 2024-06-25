@@ -14,8 +14,7 @@ $(document).ready(async function () {
   const getUserId = async () => {
     id = 'user_' + new Date().getTime();
     hashedId = await hashId(id);
-    localStorage.setItem('userId', hashedId);
-    return id;
+    return hashedId;
   };
 
   let userId = await getUserId();
@@ -26,6 +25,7 @@ $(document).ready(async function () {
       name: $('#name').val(),
       waNum: $('#waNum').val(),
       email: $('#email').val(),
+      status: 'pending',
     };
     localStorage.setItem('userData', JSON.stringify(userData));
   };

@@ -3,7 +3,8 @@ $(document).ready(function () {
   $('.card').click(function () {
     $('.card').removeClass('card-is-selected');
     $(this).addClass('card-is-selected');
-    let hairStylistName = $('#hairStylistName').text();
+    let hairStylistName = $('#hairStylistName').text().toLowerCase();
+    console.log(hairStylistName);
     let hairStylistPrice = $('#hairStylistPrice').text();
     handleSelectedHairStylist([{ hairStylistName, hairStylistPrice }]);
   });
