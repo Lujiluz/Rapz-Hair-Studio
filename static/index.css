@@ -65,6 +65,7 @@ body {
   .d-lg-block {
     display: none !important;
   }
+
   .d-lg-none {
     display: block !important;
   }
@@ -76,39 +77,71 @@ body {
   background-image: url(../static/img/bg-home.svg);
   background-size: cover;
 }
+
 .section-home .container .row {
   position: relative;
 }
 
-.icon-person {
-  position: relative;
-  top: 6.3rem;
+.titleRAPZ {
+  margin-top: 20px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-size: 4rem;
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+.moto {
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-size: 24px;
+  color: #fff;
+  margin-bottom: 30px;
+  font-style: italic;
 }
 
 
 .btn-pesan-text{
   background-color: #cc004e;
+<<<<<<< Updated upstream
   color: var(--putih);
   border: 0;
+=======
+  color: #fff;
+>>>>>>> Stashed changes
   border-radius: 0.5rem;
   padding: 8px 20px;
   font-family: "Poppins", sans-serif;
   font-weight: 600;
+<<<<<<< Updated upstream
   font-size: 24px;
+=======
+  font-size: 1.5rem;
+>>>>>>> Stashed changes
   text-decoration: none;
-  margin-right: 10rem;
   transition: all 0.3s ease-in-out;
 }
 
+<<<<<<< Updated upstream
 .btn-pesan-text:hover {
   background-color: var(--putih);
   color: var(--pink);
+=======
+.btn-pesan:hover {
+  background-color: #fff;
+  color: #cc004e;
+>>>>>>> Stashed changes
 }
 
 .responsive-img {
   width: 100%;
   height: auto;
   transition: all 0.3s ease-in-out;
+}
+
+.icon-person {
+  position: relative;
+  top: 6.3rem;
 }
 
 @media (max-width: 1212px) {
@@ -118,30 +151,53 @@ body {
     align-items: center;
   }
 
-  .icon-person {
-    position: static;
-    margin-top: 2rem;
+  .titleRAPZ {
+    text-align: center;
+    font-size: 3rem;
+    margin-top: 100px;
   }
 
   .moto {
-    margin-right: 0;
+    font-size: 1.2rem;
+    text-align: center;
   }
 
+<<<<<<< Updated upstream
   /* .btn-pesan {
     margin-right: 0;
     margin-bottom: 2rem;
     padding: 6px 15px;
     font-size: 24px;
   } */
+=======
+  .btn-pesan {
+    text-align: center;
+    font-size: 1.2rem;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    justify-content: flex-end;
 
-  .isian {
-    max-width: 70%;
+  }
+>>>>>>> Stashed changes
+
+  .icon-person {
+    margin-top: 3rem;
+    max-width: 100%;
   }
 }
 
-/* about section */
+@media (max-width: 768px) {
+  .icon-person {
+    position: relative;
+    margin-top: 3rem;
+    max-width: 100%;
+  }
+}
+
+/* about */
 .section-about {
-  padding: 100px 0;
+  padding: 10px 0;
   background-image: url(../static/img/bg-pink.svg);
   background-size: cover;
 }
@@ -152,35 +208,101 @@ body {
   font-weight: bold;
 }
 
+<<<<<<< Updated upstream
 .img-fluid{
   border-radius: 1rem;
+=======
+.about2 {
+  margin: 20px 0;
+>>>>>>> Stashed changes
 }
 
 .text-about {
   color: var(--pink);
   -webkit-text-stroke: 4px black;
   font-weight: 1000;
-  font-size: 55px;
+  font-size: 3rem;
+}
+
+.desc-about {
+  font-size: 1.2rem;
+  font-weight: 600;
+  text-align: justify;
+}
+
+.foto-barber {
+  max-width: 25rem;
+}
+
+@media (max-width: 1212px) {
+  .text-about {
+    color: var(--pink);
+    -webkit-text-stroke: 3px black;
+    font-weight: 1000;
+    font-size: 2.5rem;
+  }
+
+  .desc-about {
+    font-size: 0.8rem;
+    font-weight: 650;
+    text-align: justify;
+  }
+
+  .foto-barber {
+    max-width: 20rem;
+  }
 }
 
 /* logophi section */
 #logophi {
-  padding: 100px 0;
+  padding: 10px 0;
   background-image: url(../static/img/bg-home.svg);
   background-size: cover;
-}
-.logo-phi {
-  color: white;
-  font-size: 24px;
-  font-weight: normal;
 }
 
 .text-logophi {
   color: black;
   -webkit-text-stroke: 3px var(--pink);
   font-weight: 1000;
-  font-size: 50px;
-  font-style: italic;
+  font-size: 3rem;
+}
+
+.desc-logophi {
+  font-size: 1.2rem;
+  font-weight: 400;
+  text-align: justify;
+  color: white;
+}
+
+.logophi-pic {
+  max-width: 25rem;
+}
+
+@media (max-width: 1212px) {
+  #logophi {
+    padding: 5px 0;
+    background-image: url(../static/img/bg-home.svg);
+    background-size: cover;
+  }
+
+  .text-logophi {
+    color: black;
+    -webkit-text-stroke: 2px var(--pink);
+    font-weight: 1000;
+    font-size: 2.5rem;
+  }
+  
+  .desc-logophi {
+    font-size: 0.8rem;
+    font-weight: 400;
+    text-align: justify;
+    color: white;
+  }
+
+  .logophi-pic {
+    max-width: 18rem;
+    justify-items: center;
+  }
 }
 
 /* services section */
