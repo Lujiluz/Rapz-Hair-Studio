@@ -103,34 +103,19 @@ body {
 
 .btn-pesan-text{
   background-color: #cc004e;
-<<<<<<< Updated upstream
-  color: var(--putih);
-  border: 0;
-=======
   color: #fff;
->>>>>>> Stashed changes
   border-radius: 0.5rem;
   padding: 8px 20px;
   font-family: "Poppins", sans-serif;
   font-weight: 600;
-<<<<<<< Updated upstream
-  font-size: 24px;
-=======
   font-size: 1.5rem;
->>>>>>> Stashed changes
   text-decoration: none;
   transition: all 0.3s ease-in-out;
 }
 
-<<<<<<< Updated upstream
-.btn-pesan-text:hover {
-  background-color: var(--putih);
-  color: var(--pink);
-=======
 .btn-pesan:hover {
   background-color: #fff;
   color: #cc004e;
->>>>>>> Stashed changes
 }
 
 .responsive-img {
@@ -162,14 +147,6 @@ body {
     text-align: center;
   }
 
-<<<<<<< Updated upstream
-  /* .btn-pesan {
-    margin-right: 0;
-    margin-bottom: 2rem;
-    padding: 6px 15px;
-    font-size: 24px;
-  } */
-=======
   .btn-pesan {
     text-align: center;
     font-size: 1.2rem;
@@ -179,7 +156,6 @@ body {
     justify-content: flex-end;
 
   }
->>>>>>> Stashed changes
 
   .icon-person {
     margin-top: 3rem;
@@ -208,13 +184,8 @@ body {
   font-weight: bold;
 }
 
-<<<<<<< Updated upstream
-.img-fluid{
-  border-radius: 1rem;
-=======
 .about2 {
   margin: 20px 0;
->>>>>>> Stashed changes
 }
 
 .text-about {
