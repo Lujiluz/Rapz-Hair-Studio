@@ -26,7 +26,6 @@ body {
   position: fixed;
   top: 0;
   left: 0;
-  /* border: 1px solid white; */
   height: 35%;
   width: 40%;
   z-index: 1;
@@ -110,13 +109,6 @@ a:hover {
     margin-top: 100%;
   }
 
-  /* #person-icon {
-    width: 70%;
-    position: fixed;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-  } */
 }
 
 @media (max-width: 576px) {
@@ -139,11 +131,11 @@ a:hover {
   }
 
   h1 {
-    font-size: 24px;
+    font-size: 1.5rem;
   }
 
   .btn {
     margin-bottom: 0.3rem;
-    font-size: 14px;
+    font-size: 1rem;
   }
 }
