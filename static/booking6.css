@@ -67,7 +67,7 @@ body {
     color: black;
     -webkit-text-stroke: 2px #ff3a85;
     font-family: "Poppins", sans-serif;
-    font-size: 40px;
+    font-size: 2.5rem;
     font-weight: 1000;
 }
 
@@ -91,7 +91,7 @@ body {
 .card p {
     text-align: start;
     margin-top: 5px;
-    font-size: 18px;
+    font-size: 1rem;
 }
 .card p > span {
     font-weight: 300;
@@ -141,28 +141,61 @@ footer {
 @media (max-width: 768px) {
     .judul1 {
         -webkit-text-stroke: 1px #ff3a85;
-        font-size: 25px;
+        font-size: 2rem;
     }
 
     .input-title h1 {
-        font-size: 20px;
+        font-size: 1rem;
     }
 
     .input-title .form-label {
-        font-size: 14px;
+        font-size: 0.9rem;
     }
 
     .input-title .form-control {
-        font-size: 14px;
+        font-size: 0.9rem;
     }
 
     .btn-next,
     .btn-prev {
-        font-size: 14px;
+        font-size: 0.9rem;
         padding: 5px 15px;
     }
 
     footer {
-        font-size: 12px;
+        font-size: 0.8rem;
+    }
+}
+@media (max-width: 576px) {
+    .judul1 {
+        -webkit-text-stroke: 1px #ff3a85;
+        font-size: 1.5rem;
+        margin-left: 15px;
+    }
+
+    .input{
+        margin: 0 10px 0 10px;
+    }
+
+    .input-title h1 {
+        font-size: 1rem;
+    }
+
+    .input-title .form-label {
+        font-size: 0.9rem;
+    }
+
+    .input-title .form-control {
+        font-size: 0.9rem;
+    }
+
+    .btn-next,
+    .btn-prev {
+        font-size: 0.9rem;
+        padding: 5px 15px;
+    }
+
+    footer {
+        font-size: 0.8rem;
     }
 }

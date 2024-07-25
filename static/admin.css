@@ -139,7 +139,7 @@ li {
 }
 
 .item .text-number {
-  font-size: 18px;
+  font-size: 1.2rem;
   font-weight: 600;
 }
 .custom-hr {
@@ -149,10 +149,10 @@ li {
 
 .item .text-number .text-2 {
   margin-top: -20px;
-  font-size: 24px;
+  font-size: 1.4rem;
 }
 .item .text-number p span {
-  font-size: 48px;
+  font-size: 3rem;
 }
 
 .item .icon-item {
@@ -180,7 +180,8 @@ li {
 }
 
 .item-identity-1 {
-  width: 75%;
+  min-width: 100%;
+  max-width: 100%;
 }
 
 .name,
@@ -268,7 +269,7 @@ footer {
 }
 
 .text-data-cuti p{
-  font-size: 18px;
+  font-size: 1rem;
   font-weight: 600;
 } 
 
@@ -338,23 +339,34 @@ footer {
   color: var(--putih);
   padding: 0.5rem;
   flex-direction: column;
-  font-size: 18px;
+  font-size: 1.2rem;
   font-weight: 600;
 }
 
-.img-person-cuti img {
-  width: 60%;
+.img-person-cuti {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40vh; 
 }
+.img-person{
+  width: 200px;
+  height: 200px; 
+  object-fit: cover; 
+  border-radius: 50%;
+  border: 2px solid #ccc;
+}
+
 
 .item-text-cuti {
   margin-left: 1rem;
 }
 
 .item-text-cuti ion-icon {
-  font-size: 22px;
+  font-size: 1.2rem;
 }
 .item-text-item {
-  font-size: 18px;
+  font-size: 1rem;
   font-weight: 500;
 }
 
@@ -418,6 +430,9 @@ footer {
   color: var(--putih);
   border-radius: 1rem;
   padding: 1rem;
+  min-height: 350px;
+  max-height: 350px;
+  min-width: none;
 }
 
 .stars {
@@ -427,6 +442,10 @@ footer {
 .choice .icon-testi {
   color: var(--putih);
   font-size: 2rem;
+}
+
+.text-testi{
+  font-size: 0.9rem;
 }
 
 .add {

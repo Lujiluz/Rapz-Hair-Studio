@@ -68,7 +68,7 @@ body {
     color: black;
     -webkit-text-stroke: 2px #ff3a85;
     font-family: "Poppins", sans-serif;
-    font-size: 40px;
+    font-size: 2.5rem;
     font-weight: 1000;
 }
 
@@ -111,7 +111,7 @@ footer {
 /* For smaller devices, adjust font sizes and padding */
 @media (max-width: 768px) {
     .judul1 {
-        font-size: 25px;
+        font-size: 1.5rem;
         -webkit-text-stroke: 1px #ff3a85;
         margin-left: 10px;
     }
@@ -121,7 +121,7 @@ footer {
     }
 
     .input-title h1 {
-        font-size: 20px;
+        font-size: 1.5rem;
     }
 
     .card {
@@ -137,22 +137,74 @@ footer {
     }
 
     .card-title {
-        font-size: 16px;
+        font-size: 1rem;
         /* Ukuran font untuk judul card */
     }
 
     .card-text {
-        font-size: 14px;
+        font-size: 0.8rem;
         /* Ukuran font untuk teks pada card */
     }
 
     .btn-next,
     .btn-prev {
-        font-size: 14px;
+        font-size: 0.9rem;
         padding: 8px 15px;
     }
 
     footer {
-        font-size: 12px;
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .judul1 {
+        font-size: 1.5rem;
+        -webkit-text-stroke: 1px #ff3a85;
+        margin-left: 15px;
+    }
+
+    .input{
+        margin: 0 15px 0 15px;
+    }
+
+    .input-title {
+        padding: 40px;
+    }
+
+    .input-title h1 {
+        font-size: 1.5rem;
+    }
+
+    .card {
+        width: 100%;
+        /* Memastikan card mengambil lebar maksimal */
+        margin-bottom: 15px;
+        /* Menambahkan margin bawah antara card */
+    }
+
+    .card-body {
+        padding: 10px;
+        /* Mengurangi padding pada card body */
+    }
+
+    .card-title {
+        font-size: 1rem;
+        /* Ukuran font untuk judul card */
+    }
+
+    .card-text {
+        font-size: 0.8rem;
+        /* Ukuran font untuk teks pada card */
+    }
+
+    .btn-next,
+    .btn-prev {
+        font-size: 0.9rem;
+        padding: 8px 15px;
+    }
+
+    footer {
+        font-size: 0.8rem;
     }
 }
